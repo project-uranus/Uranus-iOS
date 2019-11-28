@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96310239019C3000539A4 /* AppDelegate.swift */; };
+		9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96312239019C3000539A4 /* SceneDelegate.swift */; };
+		9AA96315239019C3000539A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96314239019C3000539A4 /* ContentView.swift */; };
+		9AA96317239019C5000539A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96316239019C5000539A4 /* Assets.xcassets */; };
+		9AA9631A239019C5000539A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA96319239019C5000539A4 /* Preview Assets.xcassets */; };
+		9AA9631D239019C5000539A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */; };
+		9AA96328239019C6000539A4 /* UranusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96327239019C6000539A4 /* UranusTests.swift */; };
+		9AA96333239019C6000539A4 /* UranusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96332239019C6000539A4 /* UranusUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9AA96324239019C6000539A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AA96305239019C3000539A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AA9630C239019C3000539A4;
+			remoteInfo = Uranus;
+		};
+		9AA9632F239019C6000539A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AA96305239019C3000539A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AA9630C239019C3000539A4;
+			remoteInfo = Uranus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9AA9630D239019C3000539A4 /* Uranus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uranus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA96310239019C3000539A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9AA96312239019C3000539A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9AA96314239019C3000539A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9AA96316239019C5000539A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AA96319239019C5000539A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9AA9631C239019C5000539A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AA9631E239019C5000539A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AA96323239019C6000539A4 /* UranusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UranusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA96327239019C6000539A4 /* UranusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusTests.swift; sourceTree = "<group>"; };
+		9AA96329239019C6000539A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AA9632E239019C6000539A4 /* UranusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UranusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA96332239019C6000539A4 /* UranusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusUITests.swift; sourceTree = "<group>"; };
+		9AA96334239019C6000539A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9AA9630A239019C3000539A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA96320239019C6000539A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA9632B239019C6000539A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9AA96304239019C3000539A4 = {
+			isa = PBXGroup;
+			children = (
+				9AA9630F239019C3000539A4 /* Uranus */,
+				9AA96326239019C6000539A4 /* UranusTests */,
+				9AA96331239019C6000539A4 /* UranusUITests */,
+				9AA9630E239019C3000539A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9AA9630E239019C3000539A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AA9630D239019C3000539A4 /* Uranus.app */,
+				9AA96323239019C6000539A4 /* UranusTests.xctest */,
+				9AA9632E239019C6000539A4 /* UranusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AA9630F239019C3000539A4 /* Uranus */ = {
+			isa = PBXGroup;
+			children = (
+				9AA96310239019C3000539A4 /* AppDelegate.swift */,
+				9AA96312239019C3000539A4 /* SceneDelegate.swift */,
+				9AA96314239019C3000539A4 /* ContentView.swift */,
+				9AA96316239019C5000539A4 /* Assets.xcassets */,
+				9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */,
+				9AA9631E239019C5000539A4 /* Info.plist */,
+				9AA96318239019C5000539A4 /* Preview Content */,
+			);
+			path = Uranus;
+			sourceTree = "<group>";
+		};
+		9AA96318239019C5000539A4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9AA96319239019C5000539A4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9AA96326239019C6000539A4 /* UranusTests */ = {
+			isa = PBXGroup;
+			children = (
+				9AA96327239019C6000539A4 /* UranusTests.swift */,
+				9AA96329239019C6000539A4 /* Info.plist */,
+			);
+			path = UranusTests;
+			sourceTree = "<group>";
+		};
+		9AA96331239019C6000539A4 /* UranusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9AA96332239019C6000539A4 /* UranusUITests.swift */,
+				9AA96334239019C6000539A4 /* Info.plist */,
+			);
+			path = UranusUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9AA9630C239019C3000539A4 /* Uranus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA96337239019C6000539A4 /* Build configuration list for PBXNativeTarget "Uranus" */;
+			buildPhases = (
+				9AA96309239019C3000539A4 /* Sources */,
+				9AA9630A239019C3000539A4 /* Frameworks */,
+				9AA9630B239019C3000539A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Uranus;
+			productName = Uranus;
+			productReference = 9AA9630D239019C3000539A4 /* Uranus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9AA96322239019C6000539A4 /* UranusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA9633A239019C6000539A4 /* Build configuration list for PBXNativeTarget "UranusTests" */;
+			buildPhases = (
+				9AA9631F239019C6000539A4 /* Sources */,
+				9AA96320239019C6000539A4 /* Frameworks */,
+				9AA96321239019C6000539A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AA96325239019C6000539A4 /* PBXTargetDependency */,
+			);
+			name = UranusTests;
+			productName = UranusTests;
+			productReference = 9AA96323239019C6000539A4 /* UranusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9AA9632D239019C6000539A4 /* UranusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AA9633D239019C6000539A4 /* Build configuration list for PBXNativeTarget "UranusUITests" */;
+			buildPhases = (
+				9AA9632A239019C6000539A4 /* Sources */,
+				9AA9632B239019C6000539A4 /* Frameworks */,
+				9AA9632C239019C6000539A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AA96330239019C6000539A4 /* PBXTargetDependency */,
+			);
+			name = UranusUITests;
+			productName = UranusUITests;
+			productReference = 9AA9632E239019C6000539A4 /* UranusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AA96305239019C3000539A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Yuchen Cheng";
+				TargetAttributes = {
+					9AA9630C239019C3000539A4 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					9AA96322239019C6000539A4 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 9AA9630C239019C3000539A4;
+					};
+					9AA9632D239019C6000539A4 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 9AA9630C239019C3000539A4;
+					};
+				};
+			};
+			buildConfigurationList = 9AA96308239019C3000539A4 /* Build configuration list for PBXProject "Uranus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9AA96304239019C3000539A4;
+			productRefGroup = 9AA9630E239019C3000539A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AA9630C239019C3000539A4 /* Uranus */,
+				9AA96322239019C6000539A4 /* UranusTests */,
+				9AA9632D239019C6000539A4 /* UranusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AA9630B239019C3000539A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA9631D239019C5000539A4 /* LaunchScreen.storyboard in Resources */,
+				9AA9631A239019C5000539A4 /* Preview Assets.xcassets in Resources */,
+				9AA96317239019C5000539A4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA96321239019C6000539A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA9632C239019C6000539A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9AA96309239019C3000539A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
+				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
+				9AA96315239019C3000539A4 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA9631F239019C6000539A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA96328239019C6000539A4 /* UranusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AA9632A239019C6000539A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AA96333239019C6000539A4 /* UranusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9AA96325239019C6000539A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AA9630C239019C3000539A4 /* Uranus */;
+			targetProxy = 9AA96324239019C6000539A4 /* PBXContainerItemProxy */;
+		};
+		9AA96330239019C6000539A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AA9630C239019C3000539A4 /* Uranus */;
+			targetProxy = 9AA9632F239019C6000539A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AA9631C239019C5000539A4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9AA96335239019C6000539A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9AA96336239019C6000539A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9AA96338239019C6000539A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Uranus/Preview Content\"";
+				DEVELOPMENT_TEAM = WA2YZKB5GB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Uranus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rudeigerc.Uranus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9AA96339239019C6000539A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Uranus/Preview Content\"";
+				DEVELOPMENT_TEAM = WA2YZKB5GB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Uranus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rudeigerc.Uranus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9AA9633B239019C6000539A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA2YZKB5GB;
+				INFOPLIST_FILE = UranusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rudeigerc.UranusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Uranus.app/Uranus";
+			};
+			name = Debug;
+		};
+		9AA9633C239019C6000539A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA2YZKB5GB;
+				INFOPLIST_FILE = UranusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rudeigerc.UranusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Uranus.app/Uranus";
+			};
+			name = Release;
+		};
+		9AA9633E239019C6000539A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA2YZKB5GB;
+				INFOPLIST_FILE = UranusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rudeigerc.UranusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Uranus;
+			};
+			name = Debug;
+		};
+		9AA9633F239019C6000539A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WA2YZKB5GB;
+				INFOPLIST_FILE = UranusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rudeigerc.UranusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Uranus;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AA96308239019C3000539A4 /* Build configuration list for PBXProject "Uranus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA96335239019C6000539A4 /* Debug */,
+				9AA96336239019C6000539A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AA96337239019C6000539A4 /* Build configuration list for PBXNativeTarget "Uranus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA96338239019C6000539A4 /* Debug */,
+				9AA96339239019C6000539A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AA9633A239019C6000539A4 /* Build configuration list for PBXNativeTarget "UranusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA9633B239019C6000539A4 /* Debug */,
+				9AA9633C239019C6000539A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AA9633D239019C6000539A4 /* Build configuration list for PBXNativeTarget "UranusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AA9633E239019C6000539A4 /* Debug */,
+				9AA9633F239019C6000539A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AA96305239019C3000539A4 /* Project object */;
+}
