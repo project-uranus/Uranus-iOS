@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		39DBBDE6457D3E85388BF2C6 /* Pods_Uranus_UranusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A197845438FAD0B2084C28 /* Pods_Uranus_UranusUITests.framework */; };
 		738D0724FCB1535F0725393E /* Pods_UranusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7DFDCB09F75DD7ADEAD2E1 /* Pods_UranusTests.framework */; };
+		9A7A22192394035300D06B60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A22182394035300D06B60 /* MainTabView.swift */; };
+		9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */; };
+		9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221C23940B3700D06B60 /* MineRootView.swift */; };
 		9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96310239019C3000539A4 /* AppDelegate.swift */; };
 		9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96312239019C3000539A4 /* SceneDelegate.swift */; };
 		9AA96315239019C3000539A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96314239019C3000539A4 /* ContentView.swift */; };
@@ -42,6 +45,9 @@
 		3E2A9165A6B74D7C74CD79BE /* Pods-Uranus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uranus.debug.xcconfig"; path = "Target Support Files/Pods-Uranus/Pods-Uranus.debug.xcconfig"; sourceTree = "<group>"; };
 		59A197845438FAD0B2084C28 /* Pods_Uranus_UranusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uranus_UranusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7DFDCB09F75DD7ADEAD2E1 /* Pods_UranusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UranusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A7A22182394035300D06B60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
+		9A7A221C23940B3700D06B60 /* MineRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRootView.swift; sourceTree = "<group>"; };
 		9AA9630D239019C3000539A4 /* Uranus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uranus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96310239019C3000539A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA96312239019C3000539A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 		9A7A22162393FC8500D06B60 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A7A22182394035300D06B60 /* MainTabView.swift */,
+				9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */,
+				9A7A221C23940B3700D06B60 /* MineRootView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 				9AA96309239019C3000539A4 /* Sources */,
 				9AA9630A239019C3000539A4 /* Frameworks */,
 				9AA9630B239019C3000539A4 /* Resources */,
+				4CBAEC661EA61BE298EEB983 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,6 +259,7 @@
 				9AA9632A239019C6000539A4 /* Sources */,
 				9AA9632B239019C6000539A4 /* Frameworks */,
 				9AA9632C239019C6000539A4 /* Resources */,
+				2A04FC001F75D60060A0DE13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,6 +364,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2A04FC001F75D60060A0DE13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uranus-UranusUITests/Pods-Uranus-UranusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uranus-UranusUITests/Pods-Uranus-UranusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Uranus-UranusUITests/Pods-Uranus-UranusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CBAEC661EA61BE298EEB983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uranus/Pods-Uranus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Uranus/Pods-Uranus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Uranus/Pods-Uranus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4EAA6FBBC61D28DD09643EF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,8 +468,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
+				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
+				9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */,
 				9AA96315239019C3000539A4 /* ContentView.swift in Sources */,
+				9A7A22192394035300D06B60 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +679,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA4ECF9C4AB804F30D546A6F /* Pods-UranusTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WA2YZKB5GB;
@@ -654,7 +702,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A686F2255DFF1DDEE53D36B2 /* Pods-UranusTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WA2YZKB5GB;
@@ -677,7 +725,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3A6A866E501DDD4207A942E /* Pods-Uranus-UranusUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WA2YZKB5GB;
 				INFOPLIST_FILE = UranusUITests/Info.plist;
@@ -698,7 +746,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C593ECB11047A8D2D9C7DB68 /* Pods-Uranus-UranusUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WA2YZKB5GB;
 				INFOPLIST_FILE = UranusUITests/Info.plist;
