@@ -10,38 +10,65 @@ import SwiftUI
 import struct Kingfisher.KFImage
 
 struct MineRootView: View {
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+        UITableView.appearance().separatorColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().selectionStyle = .none
+    }
+    
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                HStack(spacing: 20) {
-                    KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
-                        .resizable()
-                        .frame(width: 64, height: 64)
-                        .aspectRatio(contentMode: .fit)
-                        .shadow(radius: 8)
-                        .cornerRadius(8)
-                    VStack(alignment: .leading) {
-                        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                            .font(.title)
-                            .fontWeight(.bold)
-                        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                            .font(.subheadline)
+        NavigationView {
+            List {
+                Section {
+                    HStack(spacing: 20) {
+                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
+                            .resizable()
+                            .frame(width: 64, height: 64)
+                            .aspectRatio(contentMode: .fit)
+                            .shadow(radius: 8)
+                            .cornerRadius(8)
+                        VStack(alignment: .leading) {
+                            Text("Yuchen Cheng")
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Text("Cheng, Yu-Chen")
+                                .font(.subheadline)
+                        }
+                        Spacer()
                     }
-                    Spacer()
                 }
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
                 
-                Button(action: {}) {
-                    Spacer()
-                    Text("Log out")
-                        .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                    Spacer()
+                Section {
+                    NavigationLink(destination: AboutView()) {
+                        Image(systemName: "square.and.pencil")
+                        Text("个人信息")
+                    }
+                    NavigationLink(destination: AboutView()) {
+                        Image(systemName: "gear")
+                        Text("设置")
+                    }
+                    NavigationLink(destination: AboutView()) {
+                        Image(systemName: "tag")
+                        Text("关于")
+                    }
                 }
-                .background(Color("ThemeColor"))
-                .cornerRadius(4)
-                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                
+                Section {
+                    Button(action: {
+
+                    }) {
+                        Text("登出")
+                            .foregroundColor(.white)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                    }
+                    .background(Color("ThemeColor"))
+                    .cornerRadius(4)
+                }
             }
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("我的")
         }
     }
 }

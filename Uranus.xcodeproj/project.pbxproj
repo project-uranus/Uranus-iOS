@@ -13,6 +13,7 @@
 		9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */; };
 		9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221C23940B3700D06B60 /* MineRootView.swift */; };
 		9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221F2394A14F00D06B60 /* Color+Hex.swift */; };
+		9A7A2222239533C700D06B60 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A2221239533C700D06B60 /* AboutView.swift */; };
 		9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96310239019C3000539A4 /* AppDelegate.swift */; };
 		9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96312239019C3000539A4 /* SceneDelegate.swift */; };
 		9AA96315239019C3000539A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96314239019C3000539A4 /* ContentView.swift */; };
@@ -50,6 +51,7 @@
 		9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
 		9A7A221C23940B3700D06B60 /* MineRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRootView.swift; sourceTree = "<group>"; };
 		9A7A221F2394A14F00D06B60 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		9A7A2221239533C700D06B60 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9AA9630D239019C3000539A4 /* Uranus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uranus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96310239019C3000539A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA96312239019C3000539A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				9A7A22182394035300D06B60 /* MainTabView.swift */,
 				9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */,
 				9A7A221C23940B3700D06B60 /* MineRootView.swift */,
+				9A7A2221239533C700D06B60 /* AboutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A7A2222239533C700D06B60 /* AboutView.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,

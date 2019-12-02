@@ -12,7 +12,7 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             ScheduleRootView().tabItem {
-                Image(systemName: "briefcase")
+                Image(systemName: "airplane")
                 Text("行程")
             }
             MineRootView().tabItem {
@@ -20,6 +20,7 @@ struct MainTabView: View {
                 Text("我的")
             }
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
