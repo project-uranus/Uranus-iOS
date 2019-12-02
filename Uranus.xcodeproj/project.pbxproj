@@ -12,6 +12,7 @@
 		9A7A22192394035300D06B60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A22182394035300D06B60 /* MainTabView.swift */; };
 		9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */; };
 		9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221C23940B3700D06B60 /* MineRootView.swift */; };
+		9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221F2394A14F00D06B60 /* Color+Hex.swift */; };
 		9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96310239019C3000539A4 /* AppDelegate.swift */; };
 		9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96312239019C3000539A4 /* SceneDelegate.swift */; };
 		9AA96315239019C3000539A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96314239019C3000539A4 /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		9A7A22182394035300D06B60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
 		9A7A221C23940B3700D06B60 /* MineRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRootView.swift; sourceTree = "<group>"; };
+		9A7A221F2394A14F00D06B60 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		9AA9630D239019C3000539A4 /* Uranus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uranus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96310239019C3000539A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA96312239019C3000539A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		9A7A221E2394A12600D06B60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A221F2394A14F00D06B60 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9AA96304239019C3000539A4 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +179,7 @@
 		9AA9630F239019C3000539A4 /* Uranus */ = {
 			isa = PBXGroup;
 			children = (
+				9A7A221E2394A12600D06B60 /* Extensions */,
 				9A7A22172393FCBA00D06B60 /* Utils */,
 				9A7A22162393FC8500D06B60 /* View */,
 				9A7A22152393FC7800D06B60 /* Model */,
@@ -467,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
