@@ -22,12 +22,12 @@ struct MineRootView: View {
             List {
                 Section {
                     HStack(spacing: 20) {
-//                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
-//                            .resizable()
-//                            .frame(width: 64, height: 64)
-//                            .aspectRatio(contentMode: .fit)
-//                            .shadow(radius: 8)
-//                            .cornerRadius(8)
+                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
+                            .resizable()
+                            .frame(width: 64, height: 64)
+                            .aspectRatio(contentMode: .fit)
+                            .shadow(radius: 8)
+                            .cornerRadius(8)
                         VStack(alignment: .leading) {
                             Text("Yuchen Cheng")
                                 .font(.title)
