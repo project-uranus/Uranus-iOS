@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		39DBBDE6457D3E85388BF2C6 /* Pods_Uranus_UranusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A197845438FAD0B2084C28 /* Pods_Uranus_UranusUITests.framework */; };
 		738D0724FCB1535F0725393E /* Pods_UranusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7DFDCB09F75DD7ADEAD2E1 /* Pods_UranusTests.framework */; };
+		9A347ED623967F8C003FEA7A /* StatusChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChipView.swift */; };
+		9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */; };
 		9A7A22192394035300D06B60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A22182394035300D06B60 /* MainTabView.swift */; };
 		9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */; };
 		9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221C23940B3700D06B60 /* MineRootView.swift */; };
@@ -47,6 +49,8 @@
 		3E2A9165A6B74D7C74CD79BE /* Pods-Uranus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uranus.debug.xcconfig"; path = "Target Support Files/Pods-Uranus/Pods-Uranus.debug.xcconfig"; sourceTree = "<group>"; };
 		59A197845438FAD0B2084C28 /* Pods_Uranus_UranusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uranus_UranusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7DFDCB09F75DD7ADEAD2E1 /* Pods_UranusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UranusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A347ED523967F8C003FEA7A /* StatusChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChipView.swift; sourceTree = "<group>"; };
+		9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
 		9A7A22182394035300D06B60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
 		9A7A221C23940B3700D06B60 /* MineRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRootView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */,
 				9A7A221C23940B3700D06B60 /* MineRootView.swift */,
 				9A7A2221239533C700D06B60 /* AboutView.swift */,
+				9A347ED523967F8C003FEA7A /* StatusChipView.swift */,
+				9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -482,10 +488,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7A2222239533C700D06B60 /* AboutView.swift in Sources */,
+				9A347ED623967F8C003FEA7A /* StatusChipView.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
+				9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */,
 				9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */,
 				9AA96315239019C3000539A4 /* ContentView.swift in Sources */,
 				9A7A22192394035300D06B60 /* MainTabView.swift in Sources */,

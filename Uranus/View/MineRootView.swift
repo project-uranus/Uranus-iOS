@@ -16,29 +16,29 @@ struct MineRootView: View {
         UITableViewCell.appearance().backgroundColor = .clear
         UITableViewCell.appearance().selectionStyle = .none
     }
-    
+
     var body: some View {
         NavigationView {
             List {
                 Section {
                     HStack(spacing: 20) {
-                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
-                            .resizable()
-                            .frame(width: 64, height: 64)
-                            .aspectRatio(contentMode: .fit)
-                            .shadow(radius: 8)
-                            .cornerRadius(8)
+//                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
+//                            .resizable()
+//                            .frame(width: 64, height: 64)
+//                            .aspectRatio(contentMode: .fit)
+//                            .shadow(radius: 8)
+//                            .cornerRadius(8)
                         VStack(alignment: .leading) {
                             Text("Yuchen Cheng")
                                 .font(.title)
-                                .fontWeight(.bold)
+                                .bold()
                             Text("Cheng, Yu-Chen")
                                 .font(.subheadline)
                         }
                         Spacer()
                     }
                 }
-                
+
                 Section {
                     NavigationLink(destination: AboutView()) {
                         Image(systemName: "square.and.pencil")
@@ -53,16 +53,16 @@ struct MineRootView: View {
                         Text("关于")
                     }
                 }
-                
+
                 Section {
                     Button(action: {
 
-                    }) {
+                    }, label: {
                         Text("登出")
                             .foregroundColor(.white)
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                    }
+                    })
                     .background(Color("ThemeColor"))
                     .cornerRadius(4)
                 }

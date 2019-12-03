@@ -9,10 +9,15 @@
 import SwiftUI
 
 struct ScheduleRootView: View {
+    @State private var searchText: String = ""
+    @State private var expanded: Bool = false
+
     var body: some View {
         NavigationView {
-            ScrollView {
-                Text("Hello, World!")
+            List {
+                TextField("搜索", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                ScheduleItemView()
             }
             .navigationBarTitle("行程")
         }
