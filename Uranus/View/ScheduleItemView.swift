@@ -24,7 +24,7 @@ struct ScheduleItemView: View {
                 }
                 HStack {
                     VStack {
-                        Text("上海浦东国际机场")
+                        Text("上海浦东国际机场T1")
                             .bold()
                         Text("PVG")
                             .foregroundColor(.gray)

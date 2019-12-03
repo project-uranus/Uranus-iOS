@@ -16,7 +16,7 @@ struct ScheduleRootView: View {
         NavigationView {
             List {
                 TextField("搜索", text: $searchText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(SearchTextFieldStyle())
                 ScheduleItemView()
             }
             .navigationBarTitle("行程")
