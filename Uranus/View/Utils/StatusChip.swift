@@ -1,5 +1,5 @@
 //
-//  StatusChipView.swift
+//  StatusChip.swift
 //  Uranus
 //
 //  Created by Yuchen Cheng on 2019/12/3.
@@ -31,7 +31,7 @@ enum Status {
     }
 }
 
-struct StatusChipView: View {
+struct StatusChip: View {
     @State var status: Status
 
     var body: some View {
@@ -45,16 +45,15 @@ struct StatusChipView: View {
                     .padding(2)
             }
             .frame(maxWidth: 64)
-            Spacer()
         }
     }
 }
 
-struct StatusChipView_Previews: PreviewProvider {
+struct StatusChip_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            StatusChipView(status: .unstarted)
-            StatusChipView(status: .canceled)
+            StatusChip(status: .unstarted)
+            StatusChip(status: .canceled)
         }
     }
 }

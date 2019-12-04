@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		39DBBDE6457D3E85388BF2C6 /* Pods_Uranus_UranusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A197845438FAD0B2084C28 /* Pods_Uranus_UranusUITests.framework */; };
 		738D0724FCB1535F0725393E /* Pods_UranusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7DFDCB09F75DD7ADEAD2E1 /* Pods_UranusTests.framework */; };
-		9A347ED623967F8C003FEA7A /* StatusChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChipView.swift */; };
+		9A0BA949239794F800172F43 /* Path+addLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA948239794F800172F43 /* Path+addLine.swift */; };
+		9A0BA94B23979A7C00172F43 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA94A23979A7C00172F43 /* TimeLine.swift */; };
+		9A0BA94F2397A93300172F43 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA94E2397A93300172F43 /* Panel.swift */; };
+		9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChip.swift */; };
 		9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */; };
 		9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */; };
+		9A347EDD239771BA003FEA7A /* ScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347EDC239771BA003FEA7A /* ScheduleDetailView.swift */; };
 		9A7A22192394035300D06B60 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A22182394035300D06B60 /* MainTabView.swift */; };
 		9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */; };
 		9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221C23940B3700D06B60 /* MineRootView.swift */; };
@@ -25,6 +29,7 @@
 		9AA9631D239019C5000539A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */; };
 		9AA96328239019C6000539A4 /* UranusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96327239019C6000539A4 /* UranusTests.swift */; };
 		9AA96333239019C6000539A4 /* UranusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96332239019C6000539A4 /* UranusUITests.swift */; };
+		9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACBEC3E23977D6F0079C537 /* MapView.swift */; };
 		F13F4A653F18D00C88A5C15F /* Pods_Uranus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEF377B3E24428C2DB78F62 /* Pods_Uranus.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +55,13 @@
 		3E2A9165A6B74D7C74CD79BE /* Pods-Uranus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uranus.debug.xcconfig"; path = "Target Support Files/Pods-Uranus/Pods-Uranus.debug.xcconfig"; sourceTree = "<group>"; };
 		59A197845438FAD0B2084C28 /* Pods_Uranus_UranusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uranus_UranusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C7DFDCB09F75DD7ADEAD2E1 /* Pods_UranusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UranusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A347ED523967F8C003FEA7A /* StatusChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChipView.swift; sourceTree = "<group>"; };
+		9A0BA948239794F800172F43 /* Path+addLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path+addLine.swift"; sourceTree = "<group>"; };
+		9A0BA94A23979A7C00172F43 /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
+		9A0BA94E2397A93300172F43 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		9A347ED523967F8C003FEA7A /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
 		9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
 		9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldStyle.swift; sourceTree = "<group>"; };
+		9A347EDC239771BA003FEA7A /* ScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailView.swift; sourceTree = "<group>"; };
 		9A7A22182394035300D06B60 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRootView.swift; sourceTree = "<group>"; };
 		9A7A221C23940B3700D06B60 /* MineRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineRootView.swift; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 		9AA9632E239019C6000539A4 /* UranusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UranusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96332239019C6000539A4 /* UranusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusUITests.swift; sourceTree = "<group>"; };
 		9AA96334239019C6000539A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ACBEC3E23977D6F0079C537 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A686F2255DFF1DDEE53D36B2 /* Pods-UranusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UranusTests.release.xcconfig"; path = "Target Support Files/Pods-UranusTests/Pods-UranusTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4ECF9C4AB804F30D546A6F /* Pods-UranusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UranusTests.debug.xcconfig"; path = "Target Support Files/Pods-UranusTests/Pods-UranusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C593ECB11047A8D2D9C7DB68 /* Pods-Uranus-UranusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uranus-UranusUITests.release.xcconfig"; path = "Target Support Files/Pods-Uranus-UranusUITests/Pods-Uranus-UranusUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +140,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9A347EDE23977477003FEA7A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9A347ED523967F8C003FEA7A /* StatusChip.swift */,
+				9ACBEC3E23977D6F0079C537 /* MapView.swift */,
+				9A0BA94A23979A7C00172F43 /* TimeLine.swift */,
+				9A0BA94E2397A93300172F43 /* Panel.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9A7A22152393FC7800D06B60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,13 +161,13 @@
 		9A7A22162393FC8500D06B60 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A347EDE23977477003FEA7A /* Utils */,
 				9A7A22182394035300D06B60 /* MainTabView.swift */,
 				9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */,
 				9A7A221C23940B3700D06B60 /* MineRootView.swift */,
 				9A7A2221239533C700D06B60 /* AboutView.swift */,
-				9A347ED523967F8C003FEA7A /* StatusChipView.swift */,
 				9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */,
-				9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */,
+				9A347EDC239771BA003FEA7A /* ScheduleDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +175,7 @@
 		9A7A22172393FCBA00D06B60 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -162,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				9A7A221F2394A14F00D06B60 /* Color+Hex.swift */,
+				9A0BA948239794F800172F43 /* Path+addLine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,14 +515,19 @@
 			files = (
 				9A7A2222239533C700D06B60 /* AboutView.swift in Sources */,
 				9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */,
-				9A347ED623967F8C003FEA7A /* StatusChipView.swift in Sources */,
+				9A347EDD239771BA003FEA7A /* ScheduleDetailView.swift in Sources */,
+				9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */,
+				9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
+				9A0BA94F2397A93300172F43 /* Panel.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
 				9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */,
+				9A0BA94B23979A7C00172F43 /* TimeLine.swift in Sources */,
 				9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */,
 				9AA96315239019C3000539A4 /* ContentView.swift in Sources */,
+				9A0BA949239794F800172F43 /* Path+addLine.swift in Sources */,
 				9A7A22192394035300D06B60 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

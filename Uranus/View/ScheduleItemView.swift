@@ -10,42 +10,53 @@ import SwiftUI
 
 struct ScheduleItemView: View {
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 4)
-                .opacity(0.05)
-            VStack {
-                StatusChipView(status: .canceled)
-                HStack {
-                    Text("2019-12-19 17:15")
-                        .font(.caption)
-                    Spacer()
-                    Text("2019-12-19 20:40")
-                        .font(.caption)
-                }
-                HStack {
-                    VStack {
-                        Text("上海浦东国际机场T1")
-                            .bold()
-                        Text("PVG")
-                            .foregroundColor(.gray)
+        HStack {
+            ZStack {
+                Panel()
+                VStack {
+                    HStack {
+                        StatusChip(status: .canceled)
+                        Spacer()
                     }
-                    Spacer()
-                    Image(systemName: "airplane")
-                    Spacer()
-                    VStack {
-                        Text("中部国际机场")
-                            .bold()
-                        Text("NGO")
-                            .foregroundColor(.gray)
+                    HStack {
+                        Text("2019-12-19 17:15")
+                            .font(.caption)
+                        Spacer()
+                        Text("2019-12-19 20:40")
+                            .font(.caption)
+                    }
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text("上海")
+                                .bold()
+                            Text("SHA")
+                                .foregroundColor(.gray)
+                        }
+                        Spacer()
+                        Image(systemName: "airplane")
+                        Spacer()
+                        VStack {
+                            Text("名古屋")
+                                .bold()
+                            Text("NGO")
+                                .foregroundColor(.gray)
+                        }
+                        Spacer()
+                    }
+                    HStack {
+                        Text("中国东方航空 · MU291 · Airbus A320")
+                            .font(.footnote)
+                        Spacer()
                     }
                 }
-                HStack {
-                    Text("中国东方航空 · MU291 · Airbus A320")
-                        .font(.footnote)
-                    Spacer()
-                }
+                .padding(16)
             }
-            .padding(16)
+            NavigationLink(destination: ScheduleDetailView()) {
+                EmptyView()
+            }
+            .frame(width: 0)
+            .opacity(0)
         }
     }
 }

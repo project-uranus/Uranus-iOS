@@ -15,5 +15,6 @@ struct SearchTextFieldStyle: TextFieldStyle {
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .background(RoundedRectangle(cornerRadius: 4).opacity(0.05))
+            .shadow(radius: 4)
     }
 }
