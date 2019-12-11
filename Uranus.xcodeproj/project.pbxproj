@@ -31,6 +31,7 @@
 		9AA9631D239019C5000539A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */; };
 		9AA96328239019C6000539A4 /* UranusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96327239019C6000539A4 /* UranusTests.swift */; };
 		9AA96333239019C6000539A4 /* UranusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96332239019C6000539A4 /* UranusUITests.swift */; };
+		9AC2E7FA239F7DE700E8F61E /* BoardingPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2E7F9239F7DE700E8F61E /* BoardingPassView.swift */; };
 		9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACBEC3E23977D6F0079C537 /* MapView.swift */; };
 		F13F4A653F18D00C88A5C15F /* Pods_Uranus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEF377B3E24428C2DB78F62 /* Pods_Uranus.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		9AA9632E239019C6000539A4 /* UranusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UranusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96332239019C6000539A4 /* UranusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UranusUITests.swift; sourceTree = "<group>"; };
 		9AA96334239019C6000539A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC2E7F9239F7DE700E8F61E /* BoardingPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPassView.swift; sourceTree = "<group>"; };
 		9ACBEC3E23977D6F0079C537 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A686F2255DFF1DDEE53D36B2 /* Pods-UranusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UranusTests.release.xcconfig"; path = "Target Support Files/Pods-UranusTests/Pods-UranusTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4ECF9C4AB804F30D546A6F /* Pods-UranusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UranusTests.debug.xcconfig"; path = "Target Support Files/Pods-UranusTests/Pods-UranusTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				9A7A2221239533C700D06B60 /* AboutView.swift */,
 				9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */,
 				9A347EDC239771BA003FEA7A /* ScheduleDetailView.swift */,
+				9AC2E7F9239F7DE700E8F61E /* BoardingPassView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				9A347EDD239771BA003FEA7A /* ScheduleDetailView.swift in Sources */,
 				9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */,
 				9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */,
+				9AC2E7FA239F7DE700E8F61E /* BoardingPassView.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9A0BA94F2397A93300172F43 /* Panel.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,

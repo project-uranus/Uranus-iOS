@@ -7,10 +7,40 @@
 //
 
 import SwiftUI
+import LocalAuthentication
 
-struct ModelView: View {
-    var body: some View {
-        Text("Hello, World")
+func authenticate(onSuccess: @escaping () -> Void) {
+    let context = LAContext()
+    var error: NSError?
+    var localizedReasonString: String?
+
+    if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        if #available(iOS 11.0, *) {
+            switch context.biometryType {
+            case .touchID:
+                localizedReasonString = "使用 Touch ID 验证"
+            case .faceID:
+                localizedReasonString = "使用 Face ID 验证"
+            case .none:
+                break
+            @unknown default:
+                break
+            }
+        } else {
+            localizedReasonString = "使用 Touch ID 验证"
+        }
+
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: localizedReasonString ?? "") { success, authenticationError in
+            DispatchQueue.main.async {
+                if success {
+                    onSuccess()
+                } else {
+                    // there was a problem
+                }
+            }
+        }
+    } else {
+        // no biometrics
     }
 }
 
@@ -82,10 +112,10 @@ struct ScheduleDetailView: View {
                 ZStack {
                     Panel()
                     VStack {
-                        Text("机型")
+                        Text("日期")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("Airbus A320")
+                        Text("2019-12-19")
                             .font(.subheadline)
                             .bold()
                     }
@@ -96,12 +126,11 @@ struct ScheduleDetailView: View {
                 ZStack {
                     Panel()
                     VStack {
-                        Text("日期")
+                        Text("登机时间")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("2019-12-19")
-                            .font(.subheadline)
-                            .bold()
+                        Text("16:30")
+                            .font(.title)
                     }
                     .padding()
                 }
@@ -156,13 +185,17 @@ struct ScheduleDetailView: View {
         .navigationBarTitle("MU291")
         .navigationBarItems(trailing:
             Button(action: {
-                self.isPresented = true
+                authenticate(onSuccess: {
+                    self.isPresented = true
+                })
             }, label: {
                 Image(systemName: "qrcode")
             })
                 .frame(width: 44, height: 44, alignment: .center)
                 .sheet(isPresented: $isPresented) {
-                    ModelView()
+                    BoardingPassView(onDismiss: {
+                        self.isPresented = false
+                    })
             }
         )
     }

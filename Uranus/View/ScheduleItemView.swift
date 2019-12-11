@@ -17,12 +17,7 @@ struct ScheduleItemView: View {
                     HStack {
                         StatusChip(status: .canceled)
                         Spacer()
-                    }
-                    HStack {
-                        Text("2019-12-19 17:15")
-                            .font(.caption)
-                        Spacer()
-                        Text("2019-12-19 20:40")
+                        Text("2019-12-19")
                             .font(.caption)
                     }
                     HStack {
@@ -32,6 +27,8 @@ struct ScheduleItemView: View {
                                 .bold()
                             Text("SHA")
                                 .foregroundColor(.gray)
+                            Text("17:15")
+                                .font(.caption)
                         }
                         Spacer()
                         Image(systemName: "airplane")
@@ -41,6 +38,8 @@ struct ScheduleItemView: View {
                                 .bold()
                             Text("NGO")
                                 .foregroundColor(.gray)
+                            Text("20:40")
+                                .font(.caption)
                         }
                         Spacer()
                     }

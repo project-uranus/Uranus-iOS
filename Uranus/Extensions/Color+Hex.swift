@@ -15,4 +15,6 @@ extension Color {
         let blue  = Double(hex & 0x0000FF) / 255
         self.init(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
     }
+    
+    static let theme = Color("ThemeColor")
 }

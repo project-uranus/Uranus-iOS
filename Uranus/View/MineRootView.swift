@@ -63,7 +63,7 @@ struct MineRootView: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                     })
-                    .background(Color("ThemeColor"))
+                        .background(Color.theme)
                     .cornerRadius(4)
                 }
             }
