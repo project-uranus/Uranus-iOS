@@ -8,6 +8,7 @@
 
 import SwiftUI
 import LocalAuthentication
+import PKHUD
 
 func authenticate(onSuccess: @escaping () -> Void) {
     let context = LAContext()
@@ -35,12 +36,12 @@ func authenticate(onSuccess: @escaping () -> Void) {
                 if success {
                     onSuccess()
                 } else {
-                    // there was a problem
+                    HUD.flash(.labeledError(title: "错误", subtitle: authenticationError?.localizedDescription), delay: 1.0)
                 }
             }
         }
     } else {
-        // no biometrics
+        HUD.flash(.labeledError(title: "错误", subtitle: "No biometrics."), delay: 1.0)
     }
 }
 
@@ -165,7 +166,7 @@ struct ScheduleDetailView: View {
                 ZStack {
                     Panel()
                     VStack {
-                        Text("登机门")
+                        Text("登机口")
                             .font(.caption)
                             .foregroundColor(.gray)
                         Text("2")

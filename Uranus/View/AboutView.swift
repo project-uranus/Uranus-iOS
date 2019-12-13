@@ -12,7 +12,6 @@ struct AboutView: View {
     var body: some View {
         Text("Hello, World!")
             .navigationBarTitle("关于")
-            .navigationBarHidden(true)
     }
 }
 

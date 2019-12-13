@@ -9,6 +9,7 @@ target 'Uranus' do
 
   pod 'SwiftLint'
   pod 'Kingfisher/SwiftUI'
+  pod 'PKHUD', '~> 5.0'
 
   target 'UranusTests' do
     inherit! :search_paths

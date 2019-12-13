@@ -29,18 +29,17 @@ struct MineRootView: View {
                             .shadow(radius: 8)
                             .cornerRadius(8)
                         VStack(alignment: .leading) {
-                            Text("Yuchen Cheng")
+                            Text("John Doe")
                                 .font(.title)
                                 .bold()
-                            Text("Cheng, Yu-Chen")
+                            Text("DOE/JOHN")
                                 .font(.subheadline)
                         }
                         Spacer()
                     }
                 }
-
                 Section {
-                    NavigationLink(destination: AboutView()) {
+                    NavigationLink(destination: PersonalInformationView()) {
                         Image(systemName: "square.and.pencil")
                         Text("个人信息")
                     }
@@ -53,7 +52,6 @@ struct MineRootView: View {
                         Text("关于")
                     }
                 }
-
                 Section {
                     Button(action: {
 
