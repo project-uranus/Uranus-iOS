@@ -6,6 +6,7 @@
 //  Copyright © 2019 Yuchen Cheng. All rights reserved.
 //
 
+import Foundation
 import MapKit
 
 public extension CLLocationCoordinate2D {

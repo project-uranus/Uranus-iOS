@@ -196,7 +196,7 @@ struct ScheduleDetailView: View {
                 .sheet(isPresented: $isPresented) {
                     BoardingPassView(onDismiss: {
                         self.isPresented = false
-                    })
+                    }).environmentObject(AppStore())
             }
         )
     }
