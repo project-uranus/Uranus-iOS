@@ -10,6 +10,9 @@ import SwiftUI
 import struct Kingfisher.KFImage
 
 struct PersonalInformationView: View {
+    @EnvironmentObject private var store: AppStore
+    private var personalInformation: AppState.PersonalInformation { store.state.personalInformation }
+
     var body: some View {
         List {
             Section(header: Text("")) {
@@ -31,31 +34,31 @@ struct PersonalInformationView: View {
                     Image(systemName: "n.square.fill")
                     Text("法定姓名")
                     Spacer()
-                    Text("John Doe")
+                    Text(personalInformation.legalName)
                 }
                 HStack {
                     Image(systemName: "f.square.fill")
                     Text("名（罗马字母）")
                     Spacer()
-                    Text("JOHN")
+                    Text(personalInformation.firstName)
                 }
                 HStack {
                     Image(systemName: "l.square.fill")
                     Text("姓（罗马字母）")
                     Spacer()
-                    Text("DOE")
+                    Text(personalInformation.lastName)
                 }
                 HStack {
                     Image(systemName: "envelope")
                     Text("邮箱")
                     Spacer()
-                    Text("john.doe@example.com")
+                    Text(personalInformation.email)
                 }
                 HStack {
                     Image(systemName: "signature")
                     Text("护照号码")
                     Spacer()
-                    Text("00000000")
+                    Text(personalInformation.IDNumber)
                 }
             }
         }

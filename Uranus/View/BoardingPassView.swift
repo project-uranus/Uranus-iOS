@@ -12,6 +12,7 @@ struct BoardingPassView: View {
     @EnvironmentObject private var store: AppStore
 
     @State private var QRCode: Image = Image(systemName: "qrcode")
+    private var fullName: String { "\(store.state.personalInformation.lastName)/\(store.state.personalInformation.firstName)" }
 
     var onDismiss: () -> Void
 
@@ -48,10 +49,10 @@ struct BoardingPassView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 170, height: 170)
                             .background(Color.clear)
-                        Text("DOE/JOHN")
+                        Text(fullName)
                     }
                     .onAppear {
-                        self.store.dispatch(action: .readBoardingPass)
+                        self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: "M1DESMARAIS/LUC EABC123 YULFRAAC 0834 226F001A0025 100"))
                         self.QRCode = self.generateQRCode(from: self.store.state.boardingPassToken ?? "") ?? Image(systemName: "qrcode")
                     }
                 }

@@ -41,11 +41,17 @@ func authenticate(onSuccess: @escaping () -> Void) {
             }
         }
     } else {
+        #if targetEnvironment(simulator)
+        onSuccess()
+        #else
         HUD.flash(.labeledError(title: "错误", subtitle: "No biometrics."), delay: 1.0)
+        #endif
     }
 }
 
 struct ScheduleDetailView: View {
+    @EnvironmentObject private var store: AppStore
+
     @State private var isPresented = false
 
     var body: some View {
@@ -196,7 +202,7 @@ struct ScheduleDetailView: View {
                 .sheet(isPresented: $isPresented) {
                     BoardingPassView(onDismiss: {
                         self.isPresented = false
-                    }).environmentObject(AppStore())
+                    }).environmentObject(self.store)
             }
         )
     }

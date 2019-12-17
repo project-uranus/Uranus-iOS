@@ -8,6 +8,17 @@
 
 import Foundation
 
-enum AppAction {
+struct AppAction {
+    let type: ActionType
+    let payload: Any?
+
+    init(type: ActionType, payload: Any?) {
+        self.type = type
+        self.payload = payload
+    }
+}
+
+enum ActionType {
     case readBoardingPass
+    case readPersonalInformation
 }

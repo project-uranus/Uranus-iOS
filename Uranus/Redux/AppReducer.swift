@@ -11,9 +11,13 @@ import Foundation
 func reducer(state: AppState, action: AppAction) -> AppState {
     var appState = state
 
-    switch action {
+    switch action.type {
     case .readBoardingPass:
-        appState.boardingPassToken = "M1DESMARAIS/LUC EABC123 YULFRAAC 0834 226F001A0025 100"
+        guard let payload = action.payload as? String else { break }
+        appState.boardingPassToken = payload
+    case .readPersonalInformation:
+        guard let payload = action.payload as? AppState.PersonalInformation else { break }
+        appState.personalInformation = payload
     }
 
     return appState

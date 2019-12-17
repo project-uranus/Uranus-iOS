@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject private var store: AppStore
+
     var body: some View {
         TabView {
             ScheduleRootView().tabItem {
@@ -21,6 +23,20 @@ struct MainTabView: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
+        .onAppear {
+            self.store.dispatch(
+                action: .init(
+                    type: ActionType.readPersonalInformation,
+                    payload: AppState.PersonalInformation(
+                        legalName: "John Doe",
+                        firstName: "JOHN",
+                        lastName: "DOE",
+                        email: "john.doe@example.com",
+                        IDNumber: "00000000"
+                    )
+                )
+            )
+        }
     }
 }
 

@@ -16,6 +16,14 @@ final class AppStore: ObservableObject {
     }
 
     public func dispatch(action: AppAction) {
+        #if DEBUG
+        logger.debug("[ACTION]: \(action)")
+        #endif
+
         state = reducer(state: state, action: action)
+
+        #if DEBUG
+        logger.debug("[STATE]: \(self.state)")
+        #endif
     }
 }

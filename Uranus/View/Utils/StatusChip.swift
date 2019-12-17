@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-enum Status {
+enum Status: String {
     case unstarted
     case canceled
 
