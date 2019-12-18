@@ -52,7 +52,7 @@ func authenticate(onSuccess: @escaping () -> Void) {
 struct ScheduleDetailView: View {
     @EnvironmentObject private var store: AppStore
 
-    @State private var isPresented = false
+    @State private var isPresented: Bool = false
 
     var body: some View {
         List {
@@ -192,17 +192,19 @@ struct ScheduleDetailView: View {
         .navigationBarTitle("MU291")
         .navigationBarItems(trailing:
             Button(action: {
-                authenticate(onSuccess: {
+                if self.store.state.settings.authenticateOnBoardingPassAppear {
+                    authenticate(onSuccess: {
+                        self.isPresented = true
+                    })
+                } else {
                     self.isPresented = true
-                })
+                }
             }, label: {
                 Image(systemName: "qrcode")
             })
                 .frame(width: 44, height: 44, alignment: .center)
                 .sheet(isPresented: $isPresented) {
-                    BoardingPassView(onDismiss: {
-                        self.isPresented = false
-                    }).environmentObject(self.store)
+                    BoardingPassView().environmentObject(self.store)
             }
         )
     }

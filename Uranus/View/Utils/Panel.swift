@@ -13,13 +13,13 @@ struct Panel: View {
 
     var body: some View {
         ZStack {
-            if colorScheme == .light {
+            if colorScheme == .dark {
+                RoundedRectangle(cornerRadius: 4)
+                    .opacity(0.05)
+            } else {
                 RoundedRectangle(cornerRadius: 4)
                     .fill(Color.white)
                     .shadow(radius: 2)
-            } else {
-                RoundedRectangle(cornerRadius: 4)
-                    .opacity(0.05)
             }
         }
     }

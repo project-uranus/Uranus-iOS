@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ScheduleRootView: View {
     @State private var searchText: String = ""
-    @State private var expanded: Bool = false
+    @State private var isPresented: Bool = false
 
     var body: some View {
         NavigationView {
@@ -20,6 +20,17 @@ struct ScheduleRootView: View {
                 ScheduleItemView()
             }
             .navigationBarTitle("行程")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.isPresented = true
+                }, label: {
+                    Image(systemName: "qrcode.viewfinder")
+                })
+                    .frame(width: 44, height: 44, alignment: .center)
+                    .sheet(isPresented: $isPresented) {
+                        ScannerView()
+                }
+            )
         }
     }
 }

@@ -10,12 +10,7 @@ import SwiftUI
 import struct Kingfisher.KFImage
 
 struct MineRootView: View {
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-        UITableView.appearance().separatorColor = .clear
-        UITableViewCell.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().selectionStyle = .none
-    }
+    @EnvironmentObject private var store: AppStore
 
     var body: some View {
         NavigationView {
@@ -26,13 +21,15 @@ struct MineRootView: View {
                             .resizable()
                             .frame(width: 64, height: 64)
                             .aspectRatio(contentMode: .fit)
-                            .shadow(radius: 8)
+                            .cornerRadius(8)
+                            .padding(2)
+                            .shadow(radius: 4)
                             .cornerRadius(8)
                         VStack(alignment: .leading) {
-                            Text("John Doe")
+                            Text(store.state.personalInformation.legalName)
                                 .font(.title)
                                 .bold()
-                            Text("DOE/JOHN")
+                            Text("\(store.state.personalInformation.lastName)/\(store.state.personalInformation.firstName)")
                                 .font(.subheadline)
                         }
                         Spacer()
@@ -43,7 +40,7 @@ struct MineRootView: View {
                         Image(systemName: "square.and.pencil")
                         Text("个人信息")
                     }
-                    NavigationLink(destination: AboutView()) {
+                    NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gear")
                         Text("设置")
                     }

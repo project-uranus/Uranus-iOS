@@ -22,7 +22,9 @@ struct PersonalInformationView: View {
                         .resizable()
                         .frame(width: 100, height: 100)
                         .aspectRatio(contentMode: .fit)
-                        .shadow(radius: 8)
+                        .cornerRadius(8)
+                        .padding(2)
+                        .shadow(radius: 4)
                         .cornerRadius(8)
                         .onTapGesture(perform: {
                         })
@@ -70,6 +72,7 @@ struct PersonalInformationView: View {
                 Text("修改个人信息")
             })
         )
+        .modifier(HideBottomBarWhenPushed())
     }
 }
 

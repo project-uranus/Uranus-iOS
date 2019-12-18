@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct BoardingPassView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject private var store: AppStore
 
     @State private var QRCode: Image = Image(systemName: "qrcode")
     private var fullName: String { "\(store.state.personalInformation.lastName)/\(store.state.personalInformation.firstName)" }
-
-    var onDismiss: () -> Void
 
     private func generateQRCode(from string: String) -> Image? {
         let data = string.data(using: .ascii)
@@ -40,6 +39,47 @@ struct BoardingPassView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    ZStack {
+                        Panel()
+                        VStack {
+                            Text("舱位")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text("Y")
+                                .font(.title)
+                        }
+                        .padding()
+                    }
+                    Spacer()
+                        .frame(width: 10)
+                    ZStack {
+                        Panel()
+                        VStack {
+                            Text("座位号")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text("13H")
+                                .font(.title)
+                        }
+                        .padding()
+                    }
+                    Spacer()
+                        .frame(width: 10)
+                    ZStack {
+                        Panel()
+                        VStack {
+                            Text("登机口")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text("2")
+                                .font(.title)
+                        }
+                        .padding()
+                    }
+                }
+                .frame(height: 80)
+                .padding(.init(top: 0, leading: 10, bottom: 0, trailing: 10))
                 ZStack {
                     Panel()
                         .frame(width: 200, height: 230)
@@ -60,7 +100,7 @@ struct BoardingPassView: View {
             .navigationBarTitle("登机牌")
             .navigationBarItems(leading:
                 Button(action: {
-                    self.onDismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("返回")
                 })
@@ -71,6 +111,6 @@ struct BoardingPassView: View {
 
 struct BoardingPassView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardingPassView(onDismiss: {}).environmentObject(AppStore())
+        BoardingPassView().environmentObject(AppStore())
     }
 }

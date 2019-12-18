@@ -9,18 +9,35 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject private var store: AppStore
+
+    init() {
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor.init(named: "TabBarColor")
+        UITabBar.appearance().clipsToBounds = true
+        UITabBar.appearance().layer.borderColor = UIColor.clear.cgColor
+    }
 
     var body: some View {
         TabView {
-            ScheduleRootView().tabItem {
-                Image(systemName: "airplane")
-                Text("行程")
+            ScheduleRootView()
+                .tabItem {
+                    if self.store.state.appearance.onShowTabBar {
+                        Image(systemName: "airplane")
+                            .font(.headline)
+                    }
             }
-            MineRootView().tabItem {
-                Image(systemName: "person.crop.square")
-                Text("我的")
+            .tag(0)
+            MineRootView()
+                .tabItem {
+                    if self.store.state.appearance.onShowTabBar {
+                        Image(systemName: "person.crop.square")
+                            .font(.headline)
+                    }
             }
+            .tag(1)
         }
         .edgesIgnoringSafeArea(.top)
         .onAppear {

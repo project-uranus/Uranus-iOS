@@ -11,6 +11,8 @@ import Foundation
 struct AppState {
     var boardingPassToken: String?
     var personalInformation = PersonalInformation(legalName: "", firstName: "", lastName: "", email: "", IDNumber: "")
+    var appearance: Appearance = Appearance()
+    var settings: Settings = Settings()
 }
 
 extension AppState {
@@ -20,5 +22,17 @@ extension AppState {
         var lastName: String
         var email: String
         var IDNumber: String
+    }
+}
+
+extension AppState {
+    struct Appearance {
+        var onShowTabBar: Bool = true
+    }
+}
+
+extension AppState {
+    struct Settings {
+        var authenticateOnBoardingPassAppear: Bool = true
     }
 }

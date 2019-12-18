@@ -19,6 +19,8 @@ struct AppAction {
 }
 
 enum ActionType {
+    case hideBottomBar
     case readBoardingPass
     case readPersonalInformation
+    case toggleAuthenticateOnBoardingPassAppear
 }

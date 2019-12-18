@@ -9,7 +9,7 @@
 import Foundation
 
 final class AppStore: ObservableObject {
-    @Published private(set) var state: AppState
+    @Published var state: AppState
 
     init(state: AppState = .init()) {
         self.state = state
