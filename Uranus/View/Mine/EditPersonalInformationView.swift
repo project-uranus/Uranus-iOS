@@ -10,12 +10,10 @@ import SwiftUI
 
 struct EditPersonalInformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject private var store: AppStore
+
+    @State var personalInformation: AppState.PersonalInformation
 
     @State private var isPresented: Bool = false
-//    @State private var personalInformation: AppState.PersonalInformation
-
-    private var personalInformationBinding: Binding<AppState.PersonalInformation> { $store.state.personalInformation }
 
     var body: some View {
         NavigationView {
@@ -25,7 +23,7 @@ struct EditPersonalInformationView: View {
                         Image(systemName: "n.square.fill")
                         Text("法定姓名")
                         Spacer()
-                        TextField("法定姓名", text: personalInformationBinding.legalName)
+                        TextField("法定姓名", text: $personalInformation.legalName)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.namePhonePad)
                     }
@@ -33,7 +31,7 @@ struct EditPersonalInformationView: View {
                         Image(systemName: "f.square.fill")
                         Text("名（罗马字母）")
                         Spacer()
-                        TextField("名（罗马字母）", text: personalInformationBinding.firstName)
+                        TextField("名（罗马字母）", text: $personalInformation.firstName)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.namePhonePad)
                     }
@@ -41,7 +39,7 @@ struct EditPersonalInformationView: View {
                         Image(systemName: "l.square.fill")
                         Text("姓（罗马字母）")
                         Spacer()
-                        TextField("姓（罗马字母）", text: personalInformationBinding.lastName)
+                        TextField("姓（罗马字母）", text: $personalInformation.lastName)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.namePhonePad)
                     }
@@ -49,7 +47,7 @@ struct EditPersonalInformationView: View {
                         Image(systemName: "envelope")
                         Text("邮箱")
                         Spacer()
-                        TextField("邮箱", text: personalInformationBinding.email)
+                        TextField("邮箱", text: $personalInformation.email)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.emailAddress)
                     }
@@ -57,7 +55,7 @@ struct EditPersonalInformationView: View {
                         Image(systemName: "signature")
                         Text("护照号码")
                         Spacer()
-                        TextField("护照号码", text: personalInformationBinding.IDNumber)
+                        TextField("护照号码", text: $personalInformation.IDNumber)
                             .multilineTextAlignment(.trailing)
                             .keyboardType(.numberPad)
                     }
@@ -89,6 +87,6 @@ struct EditPersonalInformationView: View {
 
 struct EditPersonalInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPersonalInformationView()
+        EditPersonalInformationView(personalInformation: AppState.PersonalInformation(legalName: "", firstName: "", lastName: "", email: "", IDNumber: ""))
     }
 }

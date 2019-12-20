@@ -101,7 +101,7 @@ struct PersonalInformationView: View {
         )
             .modifier(HideBottomBarWhenPushed())
             .sheet(isPresented: $isSheetPresented) {
-                EditPersonalInformationView().environmentObject(self.store)
+                EditPersonalInformationView(personalInformation: self.store.state.personalInformation)
         }
     }
 }
