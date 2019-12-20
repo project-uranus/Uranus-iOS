@@ -48,7 +48,7 @@ struct PersonalInformationView: View {
                                         self.sourceType = .camera
                                         self.isImagePickerPresented = true
                                     },
-                                    .destructive(Text("取消"))
+                                    .cancel(Text("取消"))
                             ])
                     }
                     .sheet(isPresented: $isImagePickerPresented) {

@@ -12,14 +12,6 @@ struct MainTabView: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject private var store: AppStore
 
-    init() {
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
-        UITabBar.appearance().backgroundColor = UIColor.init(named: "TabBarColor")
-        UITabBar.appearance().clipsToBounds = true
-        UITabBar.appearance().layer.borderColor = UIColor.clear.cgColor
-    }
-
     var body: some View {
         TabView {
             ScheduleRootView()

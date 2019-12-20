@@ -25,6 +25,12 @@
 		9A0BA9532398C6FC00172F43 /* CLLocationCoordinate2D+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA9522398C6FC00172F43 /* CLLocationCoordinate2D+average.swift */; };
 		9A22BE9723AB5F1D005A8925 /* EditPersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BE9623AB5F1D005A8925 /* EditPersonalInformationView.swift */; };
 		9A22BE9923AB8BDF005A8925 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BE9823AB8BDF005A8925 /* ImagePicker.swift */; };
+		9A22BE9D23AD35FE005A8925 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BE9C23AD35FE005A8925 /* String.swift */; };
+		9A22BE9F23AD3929005A8925 /* BoardingPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BE9E23AD3929005A8925 /* BoardingPass.swift */; };
+		9A22BEA123AD4632005A8925 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEA023AD4632005A8925 /* WebView.swift */; };
+		9A22BEA323AD4AF0005A8925 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEA223AD4AF0005A8925 /* SafariView.swift */; };
+		9A22BEA523AD4C99005A8925 /* EKEventStore+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEA423AD4C99005A8925 /* EKEventStore+Event.swift */; };
+		9A22BEA723AD4CF3005A8925 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEA623AD4CF3005A8925 /* Flight.swift */; };
 		9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChip.swift */; };
 		9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */; };
 		9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */; };
@@ -86,6 +92,12 @@
 		9A0BA9522398C6FC00172F43 /* CLLocationCoordinate2D+average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+average.swift"; sourceTree = "<group>"; };
 		9A22BE9623AB5F1D005A8925 /* EditPersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInformationView.swift; sourceTree = "<group>"; };
 		9A22BE9823AB8BDF005A8925 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9A22BE9C23AD35FE005A8925 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		9A22BE9E23AD3929005A8925 /* BoardingPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPass.swift; sourceTree = "<group>"; };
+		9A22BEA023AD4632005A8925 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9A22BEA223AD4AF0005A8925 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		9A22BEA423AD4C99005A8925 /* EKEventStore+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEventStore+Event.swift"; sourceTree = "<group>"; };
+		9A22BEA623AD4CF3005A8925 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		9A347ED523967F8C003FEA7A /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
 		9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
 		9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldStyle.swift; sourceTree = "<group>"; };
@@ -237,6 +249,8 @@
 				9A0BA94A23979A7C00172F43 /* TimeLine.swift */,
 				9A0BA94E2397A93300172F43 /* Panel.swift */,
 				9A22BE9823AB8BDF005A8925 /* ImagePicker.swift */,
+				9A22BEA023AD4632005A8925 /* WebView.swift */,
+				9A22BEA223AD4AF0005A8925 /* SafariView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -245,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				9A0BA9502398BECF00172F43 /* Airport.swift */,
+				9A22BE9E23AD3929005A8925 /* BoardingPass.swift */,
+				9A22BEA623AD4CF3005A8925 /* Flight.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +291,8 @@
 				9A7A221F2394A14F00D06B60 /* Color+Hex.swift */,
 				9A0BA948239794F800172F43 /* Path+addLine.swift */,
 				9A0BA9522398C6FC00172F43 /* CLLocationCoordinate2D+average.swift */,
+				9A22BE9C23AD35FE005A8925 /* String.swift */,
+				9A22BEA423AD4C99005A8925 /* EKEventStore+Event.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -616,9 +634,13 @@
 				9A0BA9532398C6FC00172F43 /* CLLocationCoordinate2D+average.swift in Sources */,
 				9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */,
 				9A347EDD239771BA003FEA7A /* ScheduleDetailView.swift in Sources */,
+				9A22BEA723AD4CF3005A8925 /* Flight.swift in Sources */,
 				9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */,
+				9A22BE9F23AD3929005A8925 /* BoardingPass.swift in Sources */,
 				9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */,
+				9A22BEA323AD4AF0005A8925 /* SafariView.swift in Sources */,
 				9AC2E7FA239F7DE700E8F61E /* BoardingPassView.swift in Sources */,
+				9A22BEA523AD4C99005A8925 /* EKEventStore+Event.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9A0BA94F2397A93300172F43 /* Panel.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
@@ -627,6 +649,7 @@
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
 				9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */,
 				9A0BA94B23979A7C00172F43 /* TimeLine.swift in Sources */,
+				9A22BEA123AD4632005A8925 /* WebView.swift in Sources */,
 				9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */,
 				9AA96315239019C3000539A4 /* ContentView.swift in Sources */,
 				9A098E7123A8ED2500E9DE72 /* Logger.swift in Sources */,
@@ -634,6 +657,7 @@
 				9A098E7623AA2B0700E9DE72 /* HideBottomBarWhenPushed.swift in Sources */,
 				9A0BA949239794F800172F43 /* Path+addLine.swift in Sources */,
 				9A7A22192394035300D06B60 /* MainTabView.swift in Sources */,
+				9A22BE9D23AD35FE005A8925 /* String.swift in Sources */,
 				9A22BE9923AB8BDF005A8925 /* ImagePicker.swift in Sources */,
 				9A098E6E23A89F8F00E9DE72 /* AppState.swift in Sources */,
 				9A098E7323A9344100E9DE72 /* SettingsView.swift in Sources */,

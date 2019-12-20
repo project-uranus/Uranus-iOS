@@ -12,6 +12,8 @@ struct AboutView: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+    @State private var isPresented: Bool = false
+
     var acknowledgement: some View {
         VStack {
             Text("iOS")
@@ -59,8 +61,14 @@ struct AboutView: View {
             Text("https://github.com/project-uranus")
                 .font(.caption)
                 .foregroundColor(.gray)
+                .onTapGesture {
+                    self.isPresented = true
+            }
         }
         .modifier(HideBottomBarWhenPushed())
+        .sheet(isPresented: $isPresented) {
+            SafariView(url: URL(string: "https://github.com/project-uranus")!, onFinished: {})
+        }
     }
 }
 

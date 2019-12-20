@@ -8,6 +8,7 @@
 
 import SwiftUI
 import LocalAuthentication
+import EventKit
 import PKHUD
 
 func authenticate(onSuccess: @escaping () -> Void) {
@@ -54,12 +55,59 @@ struct ScheduleDetailView: View {
 
     @State private var isPresented: Bool = false
 
-    init() {
-        UITableView.appearance().showsVerticalScrollIndicator = false
+    var buttonGroup: some View {
+        HStack {
+            Button(action: {
+                let eventStore = EKEventStore()
+                eventStore.requestAccess(to: .event) { granted, _ in
+                    if granted {
+                        eventStore.addEvent(
+                            flight: Flight(
+                                dateOfFlight: Date(),
+                                flightNumber: "MU291",
+                                departureTime: .init(timeIntervalSince1970: 1576746900),
+                                arrivalTime: .init(timeIntervalSince1970: 1576759200),
+                                fromCityAirportCode: "PVG",
+                                toCityAirportCode: "NGO"
+                            ),
+                            alertTime: nil
+                        )
+                    } else {
+
+                    }
+                }
+            }, label: {
+                HStack {
+                    Image(systemName: "calendar")
+                    Text("添加到日历")
+                }
+                .foregroundColor(.white)
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            })
+                .background(Color.theme.opacity(0.25))
+                .cornerRadius(4)
+            Spacer()
+                .frame(width: 10)
+            Button(action: {
+
+            }, label: {
+                HStack {
+                    Image(systemName: "person.crop.circle.badge.checkmark")
+                    Text("值机")
+                }
+                .foregroundColor(.white)
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            })
+                .background(Color.theme.opacity(0.25))
+                .cornerRadius(4)
+        }
     }
 
     var body: some View {
         List {
+            buttonGroup
             ZStack {
                 Panel()
                 VStack {

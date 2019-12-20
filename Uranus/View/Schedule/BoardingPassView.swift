@@ -92,7 +92,7 @@ struct BoardingPassView: View {
                         Text(fullName)
                     }
                     .onAppear {
-                        self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: "M1DESMARAIS/LUC EABC123 YULFRAAC 0834 226F001A0025 100"))
+                        self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: "M1EWING/SHAUN MR       1A11A1 BNESYDQF 551  107Y26J 37    00"))
                         self.QRCode = self.generateQRCode(from: self.store.state.boardingPassToken ?? "") ?? Image(systemName: "qrcode")
                     }
                 }

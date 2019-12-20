@@ -37,11 +37,21 @@ struct ScheduleRootView: View {
                                         RoundedRectangle(cornerRadius: 4)
                                             .fill(Color.black)
                                             .opacity(0.8)
-                                        Text(self.token ?? "")
+                                        Text(self.token?.decode().passengerName ?? "")
+                                            .font(.title)
                                             .padding()
                                     }
                                     .frame(width: 200, height: 100)
-                                    
+                                    Button(action: {
+                                        self.token = nil
+                                    }, label: {
+                                        Text("确认")
+                                            .foregroundColor(.white)
+                                            .frame(minWidth: 0, maxWidth: 200)
+                                            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                    })
+                                        .background(Color.theme)
+                                        .cornerRadius(4)
                                 }
                             }
                         }

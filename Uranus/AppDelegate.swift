@@ -22,16 +22,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         logger.addDestination(console)
 
         // MARK: Global UIKit Appearance Configuration
+        // UITabBar
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor.init(named: "TabBarColor")
+        UITabBar.appearance().clipsToBounds = true
+        UITabBar.appearance().layer.borderColor = UIColor.clear.cgColor
+        // UITableView
         UITableView.appearance().backgroundColor = .clear
         UITableView.appearance().separatorColor = .clear
+        UITableView.appearance().showsVerticalScrollIndicator = false
+        // UITableViewCell
         UITableViewCell.appearance().backgroundColor = .clear
         UITableViewCell.appearance().selectionStyle = .none
+        // UINavigationBar
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(named: "ThemeColor")!
+        ]
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(named: "ThemeColor")!
+        ]
 
         // MARK: Notification Center Configuration
         let notificationCenter = UNUserNotificationCenter.current()
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-        notificationCenter.requestAuthorization(options: options) { allowed, error in
-            if !allowed {
+        notificationCenter.requestAuthorization(options: options) { granted, error in
+            if !granted {
                 print(error ?? "")
             }
         }
