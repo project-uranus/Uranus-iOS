@@ -11,6 +11,7 @@ import SwiftUI
 struct ScheduleRootView: View {
     @State private var searchText: String = ""
     @State private var isPresented: Bool = false
+    @State private var token: String?
 
     var body: some View {
         NavigationView {
@@ -28,7 +29,22 @@ struct ScheduleRootView: View {
                 })
                     .frame(width: 44, height: 44, alignment: .center)
                     .sheet(isPresented: $isPresented) {
-                        ScannerView()
+                        ZStack {
+                            ScannerView(token: self.$token)
+                            if self.token != nil {
+                                VStack {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 4)
+                                            .fill(Color.black)
+                                            .opacity(0.8)
+                                        Text(self.token ?? "")
+                                            .padding()
+                                    }
+                                    .frame(width: 200, height: 100)
+                                    
+                                }
+                            }
+                        }
                 }
             )
         }
