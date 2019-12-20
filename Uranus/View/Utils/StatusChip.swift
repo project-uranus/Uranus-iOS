@@ -9,24 +9,49 @@
 import SwiftUI
 
 enum Status: String {
-    case unstarted
-    case canceled
+    case scheduled
+    case delayed
+    case boarding
+    case departed
+    case arrived
+    case cancelled
+    case noTakeoffInfo
 
     var color: Color {
         switch self {
-        case .unstarted:
-            return .gray
-        case .canceled:
+        case .scheduled:
+            return .blue
+        case .delayed:
+            return .orange
+        case .boarding:
+            return .yellow
+        case .departed:
+            return .green
+        case .arrived:
+            return .green
+        case .cancelled:
             return .red
+        case .noTakeoffInfo:
+            return .gray
         }
     }
 
     var text: String {
         switch self {
-        case .unstarted:
-            return "未出行"
-        case .canceled:
+        case .scheduled:
+            return "已排定"
+        case .delayed:
+            return "已延误"
+        case .boarding:
+            return "登机中"
+        case .departed:
+            return "已出发"
+        case .arrived:
+            return "已到达"
+        case .cancelled:
             return "已取消"
+        case .noTakeoffInfo:
+            return "无"
         }
     }
 }
@@ -52,8 +77,13 @@ struct StatusChip: View {
 struct StatusChip_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            StatusChip(status: .unstarted)
-            StatusChip(status: .canceled)
+            StatusChip(status: .scheduled)
+            StatusChip(status: .delayed)
+            StatusChip(status: .boarding)
+            StatusChip(status: .departed)
+            StatusChip(status: .arrived)
+            StatusChip(status: .cancelled)
+            StatusChip(status: .noTakeoffInfo)
         }
     }
 }

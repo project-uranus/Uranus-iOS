@@ -54,6 +54,10 @@ struct ScheduleDetailView: View {
 
     @State private var isPresented: Bool = false
 
+    init() {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
+
     var body: some View {
         List {
             ZStack {
@@ -110,7 +114,7 @@ struct ScheduleDetailView: View {
                         Text("状态")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        StatusChip(status: .unstarted)
+                        StatusChip(status: .scheduled)
                     }
                     .padding()
                 }
@@ -188,6 +192,7 @@ struct ScheduleDetailView: View {
                 .frame(height: 200)
                 .cornerRadius(4)
                 .shadow(radius: 2)
+
         }
         .navigationBarTitle("MU291")
         .navigationBarItems(trailing:

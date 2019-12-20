@@ -23,6 +23,8 @@
 		9A0BA94F2397A93300172F43 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA94E2397A93300172F43 /* Panel.swift */; };
 		9A0BA9512398BECF00172F43 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA9502398BECF00172F43 /* Airport.swift */; };
 		9A0BA9532398C6FC00172F43 /* CLLocationCoordinate2D+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA9522398C6FC00172F43 /* CLLocationCoordinate2D+average.swift */; };
+		9A22BE9723AB5F1D005A8925 /* EditPersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BE9623AB5F1D005A8925 /* EditPersonalInformationView.swift */; };
+		9A22BE9923AB8BDF005A8925 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BE9823AB8BDF005A8925 /* ImagePicker.swift */; };
 		9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChip.swift */; };
 		9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */; };
 		9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */; };
@@ -82,6 +84,8 @@
 		9A0BA94E2397A93300172F43 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		9A0BA9502398BECF00172F43 /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		9A0BA9522398C6FC00172F43 /* CLLocationCoordinate2D+average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+average.swift"; sourceTree = "<group>"; };
+		9A22BE9623AB5F1D005A8925 /* EditPersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPersonalInformationView.swift; sourceTree = "<group>"; };
+		9A22BE9823AB8BDF005A8925 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		9A347ED523967F8C003FEA7A /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
 		9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
 		9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldStyle.swift; sourceTree = "<group>"; };
@@ -200,6 +204,29 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		9A22BE9A23AC967A005A8925 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */,
+				9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */,
+				9A347EDC239771BA003FEA7A /* ScheduleDetailView.swift */,
+				9AC2E7F9239F7DE700E8F61E /* BoardingPassView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		9A22BE9B23AC9686005A8925 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A221C23940B3700D06B60 /* MineRootView.swift */,
+				9A7A2221239533C700D06B60 /* AboutView.swift */,
+				9AC2E7FB23A3631500E8F61E /* PersonalInformationView.swift */,
+				9A22BE9623AB5F1D005A8925 /* EditPersonalInformationView.swift */,
+				9A098E7223A9344100E9DE72 /* SettingsView.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
 		9A347EDE23977477003FEA7A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +236,7 @@
 				9A098E7A23AA49BE00E9DE72 /* ScannerView.swift */,
 				9A0BA94A23979A7C00172F43 /* TimeLine.swift */,
 				9A0BA94E2397A93300172F43 /* Panel.swift */,
+				9A22BE9823AB8BDF005A8925 /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -224,16 +252,10 @@
 		9A7A22162393FC8500D06B60 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A22BE9B23AC9686005A8925 /* Mine */,
+				9A22BE9A23AC967A005A8925 /* Schedule */,
 				9A347EDE23977477003FEA7A /* Utils */,
 				9A7A22182394035300D06B60 /* MainTabView.swift */,
-				9A7A221A23940B1E00D06B60 /* ScheduleRootView.swift */,
-				9A7A221C23940B3700D06B60 /* MineRootView.swift */,
-				9A7A2221239533C700D06B60 /* AboutView.swift */,
-				9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */,
-				9A347EDC239771BA003FEA7A /* ScheduleDetailView.swift */,
-				9AC2E7F9239F7DE700E8F61E /* BoardingPassView.swift */,
-				9AC2E7FB23A3631500E8F61E /* PersonalInformationView.swift */,
-				9A098E7223A9344100E9DE72 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -600,6 +622,7 @@
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9A0BA94F2397A93300172F43 /* Panel.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
+				9A22BE9723AB5F1D005A8925 /* EditPersonalInformationView.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
 				9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */,
@@ -611,6 +634,7 @@
 				9A098E7623AA2B0700E9DE72 /* HideBottomBarWhenPushed.swift in Sources */,
 				9A0BA949239794F800172F43 /* Path+addLine.swift in Sources */,
 				9A7A22192394035300D06B60 /* MainTabView.swift in Sources */,
+				9A22BE9923AB8BDF005A8925 /* ImagePicker.swift in Sources */,
 				9A098E6E23A89F8F00E9DE72 /* AppState.swift in Sources */,
 				9A098E7323A9344100E9DE72 /* SettingsView.swift in Sources */,
 			);

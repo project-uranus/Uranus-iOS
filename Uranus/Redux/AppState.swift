@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct AppState {
     var boardingPassToken: String?
@@ -22,6 +23,7 @@ extension AppState {
         var lastName: String
         var email: String
         var IDNumber: String
+        var avatar: UIImage? = UIImage.init(named: "Icon")
     }
 }
 

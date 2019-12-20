@@ -15,7 +15,7 @@ struct ScheduleItemView: View {
                 Panel()
                 VStack {
                     HStack {
-                        StatusChip(status: .canceled)
+                        StatusChip(status: .scheduled)
                         Spacer()
                         Text("2019-12-19")
                             .font(.caption)

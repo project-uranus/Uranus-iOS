@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 import SwiftyBeaver
 
 @UIApplicationMain
@@ -14,14 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // MARK: Console configuration
         let console = ConsoleDestination()
         console.format = "$Dyyyy-MM-dd HH:mm:ss.SSS$d $N.$F:$l $C$L$c: $M"
         logger.addDestination(console)
 
+        // MARK: Global UIKit Appearance Configuration
         UITableView.appearance().backgroundColor = .clear
         UITableView.appearance().separatorColor = .clear
         UITableViewCell.appearance().backgroundColor = .clear
         UITableViewCell.appearance().selectionStyle = .none
+
+        // MARK: Notification Center Configuration
+        let notificationCenter = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        notificationCenter.requestAuthorization(options: options) { allowed, error in
+            if !allowed {
+                print(error ?? "")
+            }
+        }
+
         return true
     }
 

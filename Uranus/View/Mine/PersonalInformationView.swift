@@ -11,6 +11,13 @@ import struct Kingfisher.KFImage
 
 struct PersonalInformationView: View {
     @EnvironmentObject private var store: AppStore
+
+    @State private var isSheetPresented: Bool = false
+    @State private var isActionSheetPresented: Bool = false
+    @State private var isImagePickerPresented: Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    @State private var image: UIImage?
+
     private var personalInformation: AppState.PersonalInformation { store.state.personalInformation }
 
     var body: some View {
@@ -18,7 +25,7 @@ struct PersonalInformationView: View {
             Section(header: Text("")) {
                 HStack {
                     Spacer()
-                    KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
+                    Image(uiImage: store.state.personalInformation.avatar!)
                         .resizable()
                         .frame(width: 100, height: 100)
                         .aspectRatio(contentMode: .fit)
@@ -27,7 +34,26 @@ struct PersonalInformationView: View {
                         .shadow(radius: 4)
                         .cornerRadius(8)
                         .onTapGesture(perform: {
+                            self.isActionSheetPresented = true
                         })
+                        .actionSheet(isPresented: $isActionSheetPresented) {
+                            ActionSheet(
+                                title: Text("修改头像"),
+                                buttons: [
+                                    .default(Text("相机胶卷")) {
+                                        self.sourceType = .photoLibrary
+                                        self.isImagePickerPresented = true
+                                    },
+                                    .default(Text("拍照")) {
+                                        self.sourceType = .camera
+                                        self.isImagePickerPresented = true
+                                    },
+                                    .destructive(Text("取消"))
+                            ])
+                    }
+                    .sheet(isPresented: $isImagePickerPresented) {
+                        ImagePicker(image: self.$store.state.personalInformation.avatar, sourceType: self.$sourceType)
+                    }
                     Spacer()
                 }
             }
@@ -68,11 +94,15 @@ struct PersonalInformationView: View {
         .navigationBarTitle("个人信息")
         .navigationBarItems(trailing:
             Button(action: {
+                self.isSheetPresented = true
             }, label: {
                 Text("修改个人信息")
             })
         )
-        .modifier(HideBottomBarWhenPushed())
+            .modifier(HideBottomBarWhenPushed())
+            .sheet(isPresented: $isSheetPresented) {
+                EditPersonalInformationView().environmentObject(self.store)
+        }
     }
 }
 
