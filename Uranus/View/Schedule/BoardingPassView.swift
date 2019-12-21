@@ -38,73 +38,116 @@ struct BoardingPassView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
+            ZStack {
+                Color.theme.opacity(0.1).edgesIgnoringSafeArea(.all)
+                VStack {
                     ZStack {
                         Panel()
-                        VStack {
-                            Text("舱位")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            Text("Y")
-                                .font(.title)
+                        HStack {
+                            Text("中国东方航空 · MU291")
                         }
-                        .padding()
                     }
-                    Spacer()
-                        .frame(width: 10)
+                    .frame(height: 80)
+                    .padding(.init(top: 0, leading: 10, bottom: 4, trailing: 10))
                     ZStack {
                         Panel()
                         VStack {
-                            Text("座位号")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            Text("13H")
-                                .font(.title)
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Text("上海")
+                                        .bold()
+                                    Text("SHA")
+                                        .foregroundColor(.gray)
+                                    Text("17:15")
+                                        .font(.caption)
+                                }
+                                Spacer()
+                                Image(systemName: "airplane")
+                                Spacer()
+                                VStack {
+                                    Text("名古屋")
+                                        .bold()
+                                    Text("NGO")
+                                        .foregroundColor(.gray)
+                                    Text("20:40")
+                                        .font(.caption)
+                                }
+                                Spacer()
+                            }
                         }
-                        .padding()
+                        .padding(8)
                     }
-                    Spacer()
-                        .frame(width: 10)
+                    .frame(height: 80)
+                    .padding(.init(top: 0, leading: 10, bottom: 4, trailing: 10))
+                    HStack {
+                        ZStack {
+                            Panel()
+                            VStack {
+                                Text("舱位")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Text("Y")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                        Spacer()
+                            .frame(width: 10)
+                        ZStack {
+                            Panel()
+                            VStack {
+                                Text("座位号")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Text("13H")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                        Spacer()
+                            .frame(width: 10)
+                        ZStack {
+                            Panel()
+                            VStack {
+                                Text("登机口")
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                Text("2")
+                                    .font(.title)
+                            }
+                            .padding()
+                        }
+                    }
+                    .frame(height: 80)
+                    .padding(.init(top: 0, leading: 10, bottom: 4, trailing: 10))
                     ZStack {
                         Panel()
+                            .frame(width: 200, height: 230)
                         VStack {
-                            Text("登机口")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            Text("2")
-                                .font(.title)
+                            QRCode
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 170, height: 170)
+                                .background(Color.clear)
+                            Text(fullName)
+                                .bold()
                         }
-                        .padding()
+                        .onAppear {
+                            self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: "M1EWING/SHAUN MR       1A11A1 BNESYDQF 551  107Y26J 37    00"))
+                            self.QRCode = self.generateQRCode(from: self.store.state.boardingPassToken ?? "") ?? Image(systemName: "qrcode")
+                        }
                     }
                 }
-                .frame(height: 80)
-                .padding(.init(top: 0, leading: 10, bottom: 0, trailing: 10))
-                ZStack {
-                    Panel()
-                        .frame(width: 200, height: 230)
-                    VStack {
-                        QRCode
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 170, height: 170)
-                            .background(Color.clear)
-                        Text(fullName)
-                    }
-                    .onAppear {
-                        self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: "M1EWING/SHAUN MR       1A11A1 BNESYDQF 551  107Y26J 37    00"))
-                        self.QRCode = self.generateQRCode(from: self.store.state.boardingPassToken ?? "") ?? Image(systemName: "qrcode")
-                    }
-                }
+                .navigationBarTitle("登机牌")
+                .navigationBarItems(leading:
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("返回")
+                    })
+                )
             }
-            .navigationBarTitle("登机牌")
-            .navigationBarItems(leading:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Text("返回")
-                })
-            )
         }
     }
 }

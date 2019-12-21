@@ -13,7 +13,7 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-            Section(header: Text("")) {
+            Section(header: Text("安全")) {
                 Toggle(isOn: $store.state.settings.authenticateOnBoardingPassAppear) {
                     Image(systemName: "faceid")
                     Text("访问登机牌时进行验证")

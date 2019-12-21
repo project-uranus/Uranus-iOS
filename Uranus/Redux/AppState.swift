@@ -14,6 +14,7 @@ struct AppState {
     var personalInformation = PersonalInformation(legalName: "", firstName: "", lastName: "", email: "", IDNumber: "")
     var appearance: Appearance = Appearance()
     var settings: Settings = Settings()
+    var messages: [Message] = [Message(time: .init(timeIntervalSince1970: 1576746900), title: "TEST", body: "TEST")]
 }
 
 extension AppState {

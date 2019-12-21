@@ -18,6 +18,15 @@ public extension String {
     }
 }
 
+public extension String {
+    internal func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "CCT")
+        return dateFormatter.date(from: self)
+    }
+}
+
 // Reference: https://stackoverflow.com/questions/45562662/how-can-i-use-string-slicing-subscripts-in-swift-4
 public extension String {
     subscript(value: Int) -> Character {

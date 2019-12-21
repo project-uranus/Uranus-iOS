@@ -34,6 +34,10 @@
 		9A22BEA923ADD62C005A8925 /* WebSocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEA823ADD62C005A8925 /* WebSocketView.swift */; };
 		9A22BEAB23ADF7E3005A8925 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEAA23ADF7E3005A8925 /* CheckInView.swift */; };
 		9A22BEB723AE12F8005A8925 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEB623AE12F8005A8925 /* PageView.swift */; };
+		9A22BEBA23AE6499005A8925 /* MessageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEB923AE6498005A8925 /* MessageRootView.swift */; };
+		9A22BEBC23AE68D2005A8925 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBB23AE68D2005A8925 /* MessageItemView.swift */; };
+		9A22BEBE23AE6F09005A8925 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBD23AE6F09005A8925 /* Message.swift */; };
+		9A22BEC023AE720E005A8925 /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBF23AE720E005A8925 /* Date+toString.swift */; };
 		9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChip.swift */; };
 		9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */; };
 		9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */; };
@@ -104,6 +108,10 @@
 		9A22BEA823ADD62C005A8925 /* WebSocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketView.swift; sourceTree = "<group>"; };
 		9A22BEAA23ADF7E3005A8925 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		9A22BEB623AE12F8005A8925 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		9A22BEB923AE6498005A8925 /* MessageRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRootView.swift; sourceTree = "<group>"; };
+		9A22BEBB23AE68D2005A8925 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
+		9A22BEBD23AE6F09005A8925 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9A22BEBF23AE720E005A8925 /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		9A347ED523967F8C003FEA7A /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
 		9A347ED723969FA4003FEA7A /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
 		9A347EDA2396BA1A003FEA7A /* SearchTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldStyle.swift; sourceTree = "<group>"; };
@@ -246,6 +254,15 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		9A22BEB823AE6485005A8925 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				9A22BEB923AE6498005A8925 /* MessageRootView.swift */,
+				9A22BEBB23AE68D2005A8925 /* MessageItemView.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		9A347EDE23977477003FEA7A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +287,7 @@
 				9A0BA9502398BECF00172F43 /* Airport.swift */,
 				9A22BE9E23AD3929005A8925 /* BoardingPass.swift */,
 				9A22BEA623AD4CF3005A8925 /* Flight.swift */,
+				9A22BEBD23AE6F09005A8925 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,10 +295,11 @@
 		9A7A22162393FC8500D06B60 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9A22BE9B23AC9686005A8925 /* Mine */,
-				9A22BE9A23AC967A005A8925 /* Schedule */,
-				9A347EDE23977477003FEA7A /* Utils */,
 				9A7A22182394035300D06B60 /* MainTabView.swift */,
+				9A347EDE23977477003FEA7A /* Utils */,
+				9A22BE9A23AC967A005A8925 /* Schedule */,
+				9A22BEB823AE6485005A8925 /* Message */,
+				9A22BE9B23AC9686005A8925 /* Mine */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +321,7 @@
 				9A0BA9522398C6FC00172F43 /* CLLocationCoordinate2D+average.swift */,
 				9A22BE9C23AD35FE005A8925 /* String.swift */,
 				9A22BEA423AD4C99005A8925 /* EKEventStore+Event.swift */,
+				9A22BEBF23AE720E005A8925 /* Date+toString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,19 +352,19 @@
 			isa = PBXGroup;
 			children = (
 				9A098E7723AA346100E9DE72 /* Fonts */,
-				9A098E6F23A8E34500E9DE72 /* ViewModel */,
-				9A098E6623A7DAE700E9DE72 /* Redux */,
 				9A7A221E2394A12600D06B60 /* Extensions */,
 				9A7A22172393FCBA00D06B60 /* Utils */,
-				9A7A22162393FC8500D06B60 /* View */,
+				9A098E6623A7DAE700E9DE72 /* Redux */,
 				9A7A22152393FC7800D06B60 /* Model */,
+				9A7A22162393FC8500D06B60 /* View */,
+				9A098E6F23A8E34500E9DE72 /* ViewModel */,
+				9AA96318239019C5000539A4 /* Preview Content */,
 				9AA96310239019C3000539A4 /* AppDelegate.swift */,
 				9AA96312239019C3000539A4 /* SceneDelegate.swift */,
 				9AA96314239019C3000539A4 /* ContentView.swift */,
 				9AA96316239019C5000539A4 /* Assets.xcassets */,
 				9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */,
 				9AA9631E239019C5000539A4 /* Info.plist */,
-				9AA96318239019C5000539A4 /* Preview Content */,
 			);
 			path = Uranus;
 			sourceTree = "<group>";
@@ -652,16 +672,20 @@
 				9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */,
 				9A22BEA323AD4AF0005A8925 /* SafariView.swift in Sources */,
 				9AC2E7FA239F7DE700E8F61E /* BoardingPassView.swift in Sources */,
+				9A22BEC023AE720E005A8925 /* Date+toString.swift in Sources */,
 				9A22BEA523AD4C99005A8925 /* EKEventStore+Event.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
 				9A0BA94F2397A93300172F43 /* Panel.swift in Sources */,
 				9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */,
+				9A22BEBC23AE68D2005A8925 /* MessageItemView.swift in Sources */,
 				9A22BE9723AB5F1D005A8925 /* EditPersonalInformationView.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
 				9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */,
+				9A22BEBE23AE6F09005A8925 /* Message.swift in Sources */,
 				9A0BA94B23979A7C00172F43 /* TimeLine.swift in Sources */,
 				9A22BEA123AD4632005A8925 /* WebView.swift in Sources */,
+				9A22BEBA23AE6499005A8925 /* MessageRootView.swift in Sources */,
 				9A7A221D23940B3700D06B60 /* MineRootView.swift in Sources */,
 				9AA96315239019C3000539A4 /* ContentView.swift in Sources */,
 				9A098E7123A8ED2500E9DE72 /* Logger.swift in Sources */,

@@ -14,7 +14,7 @@ struct CheckInView: View {
     @State private var withluggages: Bool = false
     @State private var luggages: Int = 0
     @State private var withAccompanyingPersons: Bool = false
-    @State private var accompanyingPersons: [String] = []
+    @State private var accompanyingPersons: [String] = [""]
 
     var body: some View {
         NavigationView {
@@ -39,6 +39,35 @@ struct CheckInView: View {
                             Text("是否有随行人员")
                         }
                     }
+                    if withAccompanyingPersons {
+                        ForEach(0..<self.accompanyingPersons.count, id: \.self) { index in
+                            HStack {
+                                Image(systemName: "\(index + 1).circle.fill")
+                                Text("护照号码")
+                                Spacer()
+                                TextField("护照号码", text: self.$accompanyingPersons[index])
+                                    .multilineTextAlignment(.trailing)
+                                    .keyboardType(.numbersAndPunctuation)
+                                // FIXME: Index out of range when deletion
+//                                if index != 0 {
+//                                    Button(action: {
+//                                        self.accompanyingPersons.remove(at: index)
+//                                    }, label: {
+//                                        Image(systemName: "minus.circle")
+//                                    })
+//                                    .buttonStyle(BorderlessButtonStyle())
+//                                }
+                                if index == self.accompanyingPersons.count - 1 {
+                                    Button(action: {
+                                        self.accompanyingPersons.append("")
+                                    }, label: {
+                                        Image(systemName: "plus.circle")
+                                    })
+                                        .buttonStyle(BorderlessButtonStyle())
+                                }
+                            }
+                        }
+                    }
                 }
                 Section {
                     Button(action: {
@@ -55,13 +84,13 @@ struct CheckInView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-                .navigationBarTitle("值机")
-                .navigationBarItems(leading:
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Text("返回")
-                    })
+            .navigationBarTitle("值机")
+            .navigationBarItems(leading:
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("返回")
+                })
             )
         }
     }

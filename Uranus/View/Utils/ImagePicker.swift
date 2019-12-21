@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import PKHUD
 
 // Reference: https://www.hackingwithswift.com/books/ios-swiftui/importing-an-image-into-swiftui-using-uiimagepickercontroller
 struct ImagePicker: UIViewControllerRepresentable {
@@ -26,6 +27,9 @@ struct ImagePicker: UIViewControllerRepresentable {
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
             if let image = info[.editedImage] as? UIImage {
                 parent.image = image
+            }
+            DispatchQueue.main.async {
+                HUD.flash(.success, delay: 1.0)
             }
             parent.presentationMode.wrappedValue.dismiss()
         }

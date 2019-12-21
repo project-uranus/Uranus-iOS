@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Message: Hashable {
+    let time: Date
+    let title: String
+    let body: String
+}

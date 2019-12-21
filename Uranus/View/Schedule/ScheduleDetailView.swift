@@ -53,6 +53,7 @@ func authenticate(onSuccess: @escaping () -> Void) {
 }
 
 struct ScheduleDetailView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject private var store: AppStore
 
     @State private var isBoardingPassViewPresented: Bool = false
@@ -91,7 +92,7 @@ struct ScheduleDetailView: View {
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
             })
                 .buttonStyle(BorderlessButtonStyle())
-                .background(Color.red.opacity(0.25))
+                .background(Color.red.opacity(colorScheme == .dark ? 0.25 : 1))
                 .cornerRadius(8)
             Spacer()
                 .frame(width: 10)
@@ -107,7 +108,7 @@ struct ScheduleDetailView: View {
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
             })
                 .buttonStyle(BorderlessButtonStyle())
-                .background(Color.theme.opacity(0.25))
+                .background(Color.theme.opacity(colorScheme == .dark ? 0.25 : 1))
                 .cornerRadius(8)
                 .sheet(isPresented: $isCheckInViewPresented) {
                     CheckInView()

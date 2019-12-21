@@ -23,6 +23,14 @@ struct MainTabView: View {
                         }
                 }
                 .tag(0)
+                MessageRootView()
+                    .tabItem {
+                        if self.store.state.appearance.onShowTabBar {
+                            Image(systemName: "message.fill")
+                                .font(.headline)
+                        }
+                }
+                .tag(1)
                 MineRootView()
                     .tabItem {
                         if self.store.state.appearance.onShowTabBar {
@@ -30,7 +38,7 @@ struct MainTabView: View {
                                 .font(.headline)
                         }
                 }
-                .tag(1)
+                .tag(2)
             }
             .edgesIgnoringSafeArea(.top)
             .onAppear {
