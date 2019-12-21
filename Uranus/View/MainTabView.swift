@@ -13,38 +13,42 @@ struct MainTabView: View {
     @EnvironmentObject private var store: AppStore
 
     var body: some View {
-        TabView {
-            ScheduleRootView()
-                .tabItem {
-                    if self.store.state.appearance.onShowTabBar {
-                        Image(systemName: "airplane")
-                            .font(.headline)
-                    }
+        VStack {
+            TabView {
+                ScheduleRootView()
+                    .tabItem {
+                        if self.store.state.appearance.onShowTabBar {
+                            Image(systemName: "airplane")
+                                .font(.headline)
+                        }
+                }
+                .tag(0)
+                MineRootView()
+                    .tabItem {
+                        if self.store.state.appearance.onShowTabBar {
+                            Image(systemName: "person.crop.square")
+                                .font(.headline)
+                        }
+                }
+                .tag(1)
             }
-            .tag(0)
-            MineRootView()
-                .tabItem {
-                    if self.store.state.appearance.onShowTabBar {
-                        Image(systemName: "person.crop.square")
-                            .font(.headline)
-                    }
-            }
-            .tag(1)
-        }
-        .edgesIgnoringSafeArea(.top)
-        .onAppear {
-            self.store.dispatch(
-                action: .init(
-                    type: ActionType.readPersonalInformation,
-                    payload: AppState.PersonalInformation(
-                        legalName: "John Doe",
-                        firstName: "JOHN",
-                        lastName: "DOE",
-                        email: "john.doe@example.com",
-                        IDNumber: "00000000"
+            .edgesIgnoringSafeArea(.top)
+            .onAppear {
+                self.store.dispatch(
+                    action: .init(
+                        type: ActionType.readPersonalInformation,
+                        payload: AppState.PersonalInformation(
+                            legalName: "John Doe",
+                            firstName: "JOHN",
+                            lastName: "DOE",
+                            email: "john.doe@example.com",
+                            IDNumber: "00000000"
+                        )
                     )
                 )
-            )
+            }
+            WebSocketView(url: URL(string: "wss://echo.websocket.org")!)
+                .frame(width: 0, height: 0)
         }
     }
 }

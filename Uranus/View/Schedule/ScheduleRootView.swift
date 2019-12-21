@@ -9,17 +9,30 @@
 import SwiftUI
 
 struct ScheduleRootView: View {
+    @EnvironmentObject private var store: AppStore
+
     @State private var searchText: String = ""
     @State private var isPresented: Bool = false
     @State private var token: String?
+    @State private var index: Int = 0
+
+    private let images = ["PageView-0", "PageView-1", "PageView-2"]
 
     var body: some View {
         NavigationView {
             List {
                 TextField("搜索", text: $searchText)
                     .textFieldStyle(SearchTextFieldStyle())
+                PageView(index: $index.animation(), maxIndex: images.count - 1) {
+                    ForEach(self.images, id: \.self) { image in
+                        Image(image)
+                            .resizable()
+                            .scaledToFill()
+                    }
+                }
+                .aspectRatio(16/9, contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
                 ScheduleItemView()
-                WebSocketView(url: URL(string: "wss://echo.websocket.org")!)
             }
             .navigationBarTitle("行程")
             .navigationBarItems(trailing:
@@ -35,7 +48,7 @@ struct ScheduleRootView: View {
                             if self.token != nil {
                                 VStack {
                                     ZStack {
-                                        RoundedRectangle(cornerRadius: 4)
+                                        RoundedRectangle(cornerRadius: 8)
                                             .fill(Color.black)
                                             .opacity(0.8)
                                         Text(self.token?.decode().passengerName ?? "")
@@ -51,8 +64,9 @@ struct ScheduleRootView: View {
                                             .frame(minWidth: 0, maxWidth: 200)
                                             .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                                     })
+                                        .buttonStyle(BorderlessButtonStyle())
                                         .background(Color.theme)
-                                        .cornerRadius(4)
+                                        .cornerRadius(8)
                                 }
                             }
                         }

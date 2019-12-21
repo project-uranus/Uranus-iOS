@@ -62,7 +62,7 @@ struct StatusChip: View {
     var body: some View {
         HStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 4).foregroundColor(status.color)
+                RoundedRectangle(cornerRadius: 8).foregroundColor(status.color)
                 Text(status.text)
                     .font(.caption)
                     .foregroundColor(.white)

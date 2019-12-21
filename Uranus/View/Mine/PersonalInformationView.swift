@@ -27,7 +27,7 @@ struct PersonalInformationView: View {
                     Spacer()
                     Image(uiImage: store.state.personalInformation.avatar!)
                         .resizable()
-                        .frame(width: 100, height: 100)
+                        .frame(width: 128, height: 128)
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(8)
                         .padding(2)

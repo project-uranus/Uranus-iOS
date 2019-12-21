@@ -55,7 +55,8 @@ func authenticate(onSuccess: @escaping () -> Void) {
 struct ScheduleDetailView: View {
     @EnvironmentObject private var store: AppStore
 
-    @State private var isPresented: Bool = false
+    @State private var isBoardingPassViewPresented: Bool = false
+    @State private var isCheckInViewPresented: Bool = false
 
     var buttonGroup: some View {
         HStack {
@@ -82,19 +83,20 @@ struct ScheduleDetailView: View {
                 }
             }, label: {
                 HStack {
-                    Image(systemName: "calendar")
+                    Image(systemName: "calendar.badge.plus")
                     Text("添加到日历")
                 }
                 .foregroundColor(.white)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
             })
-                .background(Color.theme.opacity(0.25))
-                .cornerRadius(4)
+                .buttonStyle(BorderlessButtonStyle())
+                .background(Color.red.opacity(0.25))
+                .cornerRadius(8)
             Spacer()
                 .frame(width: 10)
             Button(action: {
-
+                self.isCheckInViewPresented = true
             }, label: {
                 HStack {
                     Image(systemName: "person.crop.circle.badge.checkmark")
@@ -104,8 +106,12 @@ struct ScheduleDetailView: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
             })
+                .buttonStyle(BorderlessButtonStyle())
                 .background(Color.theme.opacity(0.25))
-                .cornerRadius(4)
+                .cornerRadius(8)
+                .sheet(isPresented: $isCheckInViewPresented) {
+                    CheckInView()
+            }
         }
     }
 
@@ -242,7 +248,7 @@ struct ScheduleDetailView: View {
                 destinationAirport: Airport(IATA: "NGO", name: "中部国际机场", position: "名古屋", coordinate: .init(latitude: 34.858333, longitude: 136.805278))
             )
                 .frame(height: 200)
-                .cornerRadius(4)
+                .cornerRadius(8)
                 .shadow(radius: 2)
 
         }
@@ -251,16 +257,16 @@ struct ScheduleDetailView: View {
             Button(action: {
                 if self.store.state.settings.authenticateOnBoardingPassAppear {
                     authenticate(onSuccess: {
-                        self.isPresented = true
+                        self.isBoardingPassViewPresented = true
                     })
                 } else {
-                    self.isPresented = true
+                    self.isBoardingPassViewPresented = true
                 }
             }, label: {
                 Image(systemName: "qrcode")
             })
                 .frame(width: 44, height: 44, alignment: .center)
-                .sheet(isPresented: $isPresented) {
+                .sheet(isPresented: $isBoardingPassViewPresented) {
                     BoardingPassView().environmentObject(self.store)
             }
         )

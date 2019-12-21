@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import struct Kingfisher.KFImage
 
 struct MineRootView: View {
     @EnvironmentObject private var store: AppStore
@@ -17,7 +16,7 @@ struct MineRootView: View {
             List {
                 Section {
                     HStack(spacing: 20) {
-                        KFImage(URL(string: "https://avatars0.githubusercontent.com/u/18243819?s=460&v=4")!)
+                        Image(uiImage: store.state.personalInformation.avatar!)
                             .resizable()
                             .frame(width: 64, height: 64)
                             .aspectRatio(contentMode: .fit)
@@ -58,8 +57,9 @@ struct MineRootView: View {
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                     })
+                        .buttonStyle(BorderlessButtonStyle())
                         .background(Color.theme)
-                    .cornerRadius(4)
+                        .cornerRadius(8)
                 }
             }
             .listStyle(GroupedListStyle())
