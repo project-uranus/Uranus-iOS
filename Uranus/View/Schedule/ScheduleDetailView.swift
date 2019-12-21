@@ -45,7 +45,9 @@ func authenticate(onSuccess: @escaping () -> Void) {
         #if targetEnvironment(simulator)
         onSuccess()
         #else
-        HUD.flash(.labeledError(title: "错误", subtitle: "No biometrics."), delay: 1.0)
+        DispatchQueue.main.async {
+            HUD.flash(.labeledError(title: "错误", subtitle: "No biometrics."), delay: 1.0)
+        }
         #endif
     }
 }
@@ -59,7 +61,7 @@ struct ScheduleDetailView: View {
         HStack {
             Button(action: {
                 let eventStore = EKEventStore()
-                eventStore.requestAccess(to: .event) { granted, _ in
+                eventStore.requestAccess(to: .event) { granted, error in
                     if granted {
                         eventStore.addEvent(
                             flight: Flight(
@@ -73,7 +75,9 @@ struct ScheduleDetailView: View {
                             alertTime: nil
                         )
                     } else {
-
+                        DispatchQueue.main.async {
+                            HUD.flash(.labeledError(title: "错误", subtitle: error?.localizedDescription), delay: 1.0)
+                        }
                     }
                 }
             }, label: {

@@ -23,6 +23,10 @@ extension EKEventStore: Event {
             event.title = "\(flight.flightNumber) / \(flight.fromCityAirportCode) To \(flight.toCityAirportCode)"
             event.startDate = flight.departureTime
             event.endDate = flight.arrivalTime
+            event.notes =
+            """
+                \(flight.flightNumber)
+            """
 
             if alertTime != nil {
                 event.addAlarm(EKAlarm(absoluteDate: alertTime!))
@@ -33,7 +37,12 @@ extension EKEventStore: Event {
             do {
                 try self.save(event, span: .thisEvent, commit: true)
             } catch {
-
+                DispatchQueue.main.async {
+                    HUD.flash(.labeledError(title: "错误", subtitle: "添加失败"), delay: 1.0)
+                }
+            }
+            DispatchQueue.main.async {
+                HUD.flash(.success, delay: 1.0)
             }
         }
     }

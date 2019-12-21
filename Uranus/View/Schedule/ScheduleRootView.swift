@@ -19,6 +19,7 @@ struct ScheduleRootView: View {
                 TextField("搜索", text: $searchText)
                     .textFieldStyle(SearchTextFieldStyle())
                 ScheduleItemView()
+                WebSocketView(url: URL(string: "wss://echo.websocket.org")!)
             }
             .navigationBarTitle("行程")
             .navigationBarItems(trailing:
