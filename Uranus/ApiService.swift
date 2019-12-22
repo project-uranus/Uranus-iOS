@@ -18,6 +18,7 @@ protocol TargetType {
 
 enum Request {
     case getBoardingPassToken
+    case getFlightList
 }
 
 enum HTTPMethod: String {
@@ -36,12 +37,14 @@ extension Request: TargetType {
         switch self {
         case .getBoardingPassToken:
             return "/boardingPass"
+        case .getFlightList:
+            return "/flights"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .getBoardingPassToken:
+        case .getBoardingPassToken, .getFlightList:
             return .GET
         }
     }
@@ -65,6 +68,14 @@ final class ApiService<Target: TargetType>: ApiServiceType {
     func request<T: Codable>(_ target: Target, with type: T.Type) -> AnyPublisher<T, Error> {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .custom { decoder in
+            let container = try decoder.singleValueContainer()
+            let string = try container.decode(String.self)
+
+            let dateFormatter = ISO8601DateFormatter()
+            dateFormatter.timeZone = .current
+            return dateFormatter.date(from: string) ?? Date()
+        }
 
         let pathURL = URL(string: target.path, relativeTo: target.baseURL)!
         logger.debug(pathURL.absoluteURL)
@@ -73,6 +84,7 @@ final class ApiService<Target: TargetType>: ApiServiceType {
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = target.method.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cmFudXMiLCJleHAiOjE1NzcxMTk2MzcsImlhdCI6MTU3NzAzMzIzNywicm9sZSI6InBhc3NlbmdlciIsImlkZW50aWZpZXIiOjE1NzY4OTYzODI1NjF9.OFjoYjnVNzUnxop8RpEilOXV3Zpd0ncm7mTLi4of5sY", forHTTPHeaderField: "Authorization")
         if target.headers != nil {
             target.headers?.forEach { header in
                 request.addValue(header.1, forHTTPHeaderField: header.0)

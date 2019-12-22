@@ -14,7 +14,7 @@ struct MessageRootView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(store.state.messages, id: \.self) { message in
+                ForEach(store.state.messages, id: \.self.uuid) { message in
                     MessageItemView(message: message)
                 }
             }

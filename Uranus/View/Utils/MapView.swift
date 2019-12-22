@@ -18,7 +18,7 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
-        let coordinate = CLLocationCoordinate2D.average(origin: self.originAirport.coordinate, destination: self.destinationAirport.coordinate)
+        let coordinate = CLLocationCoordinate2D.average(origin: .init(latitude: self.originAirport.latitude, longitude: self.originAirport.longitude), destination: .init(latitude: self.destinationAirport.latitude, longitude: self.destinationAirport.longitude))
         let span = MKCoordinateSpan(latitudeDelta: 16.0, longitudeDelta: 16.0)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         uiView.addAnnotations([AirportAnnotation(airport: self.originAirport), AirportAnnotation(airport: self.destinationAirport)])
@@ -29,8 +29,8 @@ struct MapView: UIViewRepresentable {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(
-            originAirport: Airport(IATA: "PVG", name: "上海浦东国际机场", position: "上海", coordinate: .init(latitude: 31.143333, longitude: 121.805278)),
-            destinationAirport: Airport(IATA: "NGO", name: "中部国际机场", position: "名古屋", coordinate: .init(latitude: 34.858333, longitude: 136.805278))
+            originAirport: Airport(IATA: "PVG", name: "上海浦东国际机场", position: "上海", latitude: 31.143333, longitude: 121.805278),
+            destinationAirport: Airport(IATA: "NGO", name: "中部国际机场", position: "名古屋", latitude: 34.858333, longitude: 136.805278)
         )
     }
 }

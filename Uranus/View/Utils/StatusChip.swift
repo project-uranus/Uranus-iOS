@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-enum Status: String {
+enum FlightStatus: String, Codable {
     case scheduled
     case delayed
     case boarding
@@ -57,7 +57,7 @@ enum Status: String {
 }
 
 struct StatusChip: View {
-    @State var status: Status
+    @State var status: FlightStatus
 
     var body: some View {
         HStack {

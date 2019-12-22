@@ -8,11 +8,25 @@
 
 import Foundation
 
+enum Pattern: String {
+    case yyyyMMddHHmmss
+    case yyyyMMdd
+    case HHmm
+}
+
 public extension Date {
-    internal func toString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "CCT")
-        return dateFormatter.string(from: self)
+    internal func toString(with pattern: Pattern) -> String {
+        let formatter = DateFormatter()
+        switch pattern {
+        case .yyyyMMddHHmmss:
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            return formatter.string(from: self)
+        case .yyyyMMdd:
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter.string(from: self)
+        case .HHmm:
+            formatter.dateFormat = "HH:mm"
+            return formatter.string(from: self)
+        }
     }
 }

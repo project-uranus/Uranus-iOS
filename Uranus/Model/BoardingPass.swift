@@ -10,13 +10,16 @@ import Foundation
 
 struct BoardingPass: Codable {
     let token: String
-
-    var passengerName: String { String(self.token[2..<22]).trimmingCharacters(in: .whitespaces) }
-    var operatingCarrierDesignator: String { String(self.token[36..<39]).trimmingCharacters(in: .whitespaces) }
-    var flightNumber: String { String(self.token[39..<44]).trimmingCharacters(in: .whitespaces) }
-    var flightDesignator: String { "\(self.operatingCarrierDesignator)\(self.flightNumber)" }
+    let passengerName: String
+    let operatingCarrierDesignator: String
+    let flightNumber: String
+    let flightDesignator: String
 
     init(token: String) {
         self.token = token
+        self.passengerName = String(token[2..<22]).trimmingCharacters(in: .whitespaces)
+        self.operatingCarrierDesignator = String(token[36..<39]).trimmingCharacters(in: .whitespaces)
+        self.flightNumber = String(token[39..<44]).trimmingCharacters(in: .whitespaces)
+        self.flightDesignator = "\(self.operatingCarrierDesignator)\(self.flightNumber)"
     }
 }

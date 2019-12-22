@@ -9,11 +9,12 @@
 import Foundation
 import MapKit
 
-struct Airport {
+struct Airport: Codable {
     let IATA: String
     let name: String
     let position: String
-    let coordinate: CLLocationCoordinate2D
+    let latitude: Double
+    let longitude: Double
 }
 
 class AirportAnnotation: NSObject, MKAnnotation {
@@ -22,7 +23,7 @@ class AirportAnnotation: NSObject, MKAnnotation {
     let subtitle: String?
 
     init(airport: Airport) {
-        self.coordinate = airport.coordinate
+        self.coordinate = .init(latitude: airport.latitude, longitude: airport.longitude)
         self.title = airport.position
         self.subtitle = airport.name
     }

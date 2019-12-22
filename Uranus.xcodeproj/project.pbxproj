@@ -49,6 +49,8 @@
 		9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221F2394A14F00D06B60 /* Color+Hex.swift */; };
 		9A7A2222239533C700D06B60 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A2221239533C700D06B60 /* AboutView.swift */; };
 		9A9EDF2223AF51DB001DC7DA /* AnyCancellable+DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2123AF51DB001DC7DA /* AnyCancellable+DisposeBag.swift */; };
+		9A9EDF2423AFD13F001DC7DA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2323AFD13F001DC7DA /* City.swift */; };
+		9A9EDF2623AFDAF6001DC7DA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2523AFDAF6001DC7DA /* Response.swift */; };
 		9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96310239019C3000539A4 /* AppDelegate.swift */; };
 		9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96312239019C3000539A4 /* SceneDelegate.swift */; };
 		9AA96315239019C3000539A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96314239019C3000539A4 /* ContentView.swift */; };
@@ -125,6 +127,8 @@
 		9A7A221F2394A14F00D06B60 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		9A7A2221239533C700D06B60 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9A9EDF2123AF51DB001DC7DA /* AnyCancellable+DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyCancellable+DisposeBag.swift"; sourceTree = "<group>"; };
+		9A9EDF2323AFD13F001DC7DA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		9A9EDF2523AFDAF6001DC7DA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		9AA9630D239019C3000539A4 /* Uranus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uranus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96310239019C3000539A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA96312239019C3000539A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 				9A22BE9E23AD3929005A8925 /* BoardingPass.swift */,
 				9A22BEA623AD4CF3005A8925 /* Flight.swift */,
 				9A22BEBD23AE6F09005A8925 /* Message.swift */,
+				9A9EDF2323AFD13F001DC7DA /* City.swift */,
+				9A9EDF2523AFDAF6001DC7DA /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -664,7 +670,9 @@
 				9A098E6A23A89E0900E9DE72 /* AppAction.swift in Sources */,
 				9A098E6C23A89E1C00E9DE72 /* AppReducer.swift in Sources */,
 				9A7A2222239533C700D06B60 /* AboutView.swift in Sources */,
+				9A9EDF2423AFD13F001DC7DA /* City.swift in Sources */,
 				9A22BEA923ADD62C005A8925 /* WebSocketView.swift in Sources */,
+				9A9EDF2623AFDAF6001DC7DA /* Response.swift in Sources */,
 				9AC2E7FC23A3631500E8F61E /* PersonalInformationView.swift in Sources */,
 				9A22BEC223AE84A0005A8925 /* ApiService.swift in Sources */,
 				9A098E7B23AA49BE00E9DE72 /* ScannerView.swift in Sources */,

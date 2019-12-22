@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Message: Hashable {
+struct Message {
+    let uuid: UUID = .init()
     let time: Date
     let title: String
     let body: String

@@ -20,7 +20,7 @@ extension EKEventStore: Event {
         if let calendar = self.defaultCalendarForNewEvents {
             let event = EKEvent(eventStore: self)
             event.calendar = calendar
-            event.title = "\(flight.flightNumber) / \(flight.fromCityAirportCode) To \(flight.toCityAirportCode)"
+            event.title = "\(flight.flightNumber) / \(flight.originAirport.positionCode) To \(flight.destinationAirport.positionCode)"
             event.startDate = flight.departureTime
             event.endDate = flight.arrivalTime
             event.notes =

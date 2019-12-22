@@ -9,42 +9,44 @@
 import SwiftUI
 
 struct ScheduleItemView: View {
+    @State var flight: Flight
+
     var body: some View {
         HStack {
             ZStack {
                 Panel()
                 VStack {
                     HStack {
-                        StatusChip(status: .scheduled)
+                        StatusChip(status: flight.status)
                         Spacer()
-                        Text("2019-12-19")
+                        Text(flight.dateOfFlight.toString(with: .yyyyMMdd))
                             .font(.caption)
                     }
                     HStack {
                         Spacer()
                         VStack {
-                            Text("上海")
+                            Text(flight.originAirport.position)
                                 .bold()
-                            Text("SHA")
+                            Text(flight.originAirport.positionCode)
                                 .foregroundColor(.gray)
-                            Text("17:15")
+                            Text(flight.departureTime.toString(with: .HHmm))
                                 .font(.caption)
                         }
                         Spacer()
                         Image(systemName: "airplane")
                         Spacer()
                         VStack {
-                            Text("名古屋")
+                            Text(flight.destinationAirport.position)
                                 .bold()
-                            Text("NGO")
+                            Text(flight.destinationAirport.positionCode)
                                 .foregroundColor(.gray)
-                            Text("20:40")
+                            Text(flight.arrivalTime.toString(with: .HHmm))
                                 .font(.caption)
                         }
                         Spacer()
                     }
                     HStack {
-                        Text("中国东方航空 · MU291 · Airbus A320")
+                        Text("\(flight.airline) · \(flight.flightNumber) · \(flight.aircraft)")
                             .font(.footnote)
                         Spacer()
                     }
@@ -63,8 +65,17 @@ struct ScheduleItemView: View {
 struct ScheduleItemView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            ScheduleItemView()
-            ScheduleItemView()
+            ScheduleItemView(flight: Flight(
+                airline: "中国东方航空",
+                flightNumber: "MU291",
+                aircraft: "Airbus A320",
+                dateOfFlight: Date(),
+                departureTime: .init(timeIntervalSince1970: 1576746900),
+                arrivalTime: .init(timeIntervalSince1970: 1576759200),
+                originAirport: City(position: "上海", positionCode: "SHA"),
+                destinationAirport: City(position: "名古屋", positionCode: "NGO"),
+                status: .scheduled
+            ))
         }
     }
 }

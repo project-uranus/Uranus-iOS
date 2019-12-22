@@ -8,11 +8,21 @@
 
 import Foundation
 
-struct Flight {
-    let dateOfFlight: Date
+struct Flight: Codable {
+    let uuid: UUID = .init()
+    let airline: String
     let flightNumber: String
+    let aircraft: String
+    let dateOfFlight: Date
     let departureTime: Date
     let arrivalTime: Date
-    let fromCityAirportCode: String
-    let toCityAirportCode: String
+    let originAirport: City
+    let destinationAirport: City
+    let status: FlightStatus
+}
+
+struct FlightDetail: Codable {
+//    struct Flight: Codable {
+//        <#fields#>
+//    }
 }

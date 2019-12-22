@@ -67,12 +67,15 @@ struct ScheduleDetailView: View {
                     if granted {
                         eventStore.addEvent(
                             flight: Flight(
-                                dateOfFlight: Date(),
+                                airline: "中国东方航空",
                                 flightNumber: "MU291",
+                                aircraft: "Airbus A320",
+                                dateOfFlight: Date(),
                                 departureTime: .init(timeIntervalSince1970: 1576746900),
                                 arrivalTime: .init(timeIntervalSince1970: 1576759200),
-                                fromCityAirportCode: "PVG",
-                                toCityAirportCode: "NGO"
+                                originAirport: City(position: "上海", positionCode: "SHA"),
+                                destinationAirport: City(position: "名古屋", positionCode: "NGO"),
+                                status: .scheduled
                             ),
                             alertTime: nil
                         )
@@ -245,8 +248,8 @@ struct ScheduleDetailView: View {
                 }
             }
             MapView(
-                originAirport: Airport(IATA: "PVG", name: "上海浦东国际机场", position: "上海", coordinate: .init(latitude: 31.143333, longitude: 121.805278)),
-                destinationAirport: Airport(IATA: "NGO", name: "中部国际机场", position: "名古屋", coordinate: .init(latitude: 34.858333, longitude: 136.805278))
+                originAirport: Airport(IATA: "PVG", name: "上海浦东国际机场", position: "上海", latitude: 31.143333, longitude: 121.805278),
+                destinationAirport: Airport(IATA: "NGO", name: "中部国际机场", position: "名古屋", latitude: 34.858333, longitude: 136.805278)
             )
                 .frame(height: 200)
                 .cornerRadius(8)

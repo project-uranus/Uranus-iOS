@@ -22,7 +22,7 @@ struct MessageItemView: View {
                 .shadow(radius: 4)
                 .cornerRadius(8)
             VStack(alignment: .leading) {
-                Text(message.time.toString())
+                Text(message.time.toString(with: .yyyyMMddHHmmss))
                     .font(.caption)
                     .foregroundColor(.gray)
                 ZStack {

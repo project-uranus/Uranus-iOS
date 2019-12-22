@@ -11,11 +11,13 @@ import SwiftUI
 struct ScheduleRootView: View {
     @EnvironmentObject private var store: AppStore
 
+    @State private var flightList: [Flight] = []
     @State private var searchText: String = ""
     @State private var isPresented: Bool = false
     @State private var token: String?
     @State private var index: Int = 0
 
+    var disposeBag = DisposeBag()
     private let images = ["PageView-0", "PageView-1", "PageView-2"]
 
     var body: some View {
@@ -32,7 +34,23 @@ struct ScheduleRootView: View {
                 }
                 .aspectRatio(16/9, contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
-                ScheduleItemView()
+                ForEach(flightList, id: \.self.uuid) { flight in
+                    ScheduleItemView(flight: flight)
+                }
+            }
+            .onAppear {
+                apiService
+                    .request(.getFlightList, with: Response<[Flight]>.self)
+                    .sink(
+                        receiveCompletion: { complete in
+                            if case .failure(let error) = complete {
+                                logger.error(error)
+                            }
+                    }, receiveValue: { value in
+                        self.flightList = value.value
+                    }
+                )
+                    .add(to: self.disposeBag)
             }
             .navigationBarTitle("行程")
             .navigationBarItems(trailing:

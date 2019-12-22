@@ -144,7 +144,6 @@ struct BoardingPassView: View {
                                             logger.error(error)
                                         }
                                 }, receiveValue: { value in
-                                    logger.debug(value.token)
                                     self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: value.token))
                                     self.QRCode = self.generateQRCode(from: value.token) ?? Image(systemName: "qrcode")
                                 }
