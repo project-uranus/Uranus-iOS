@@ -15,6 +15,8 @@ struct BoardingPassView: View {
     @State private var QRCode: Image = Image(systemName: "qrcode")
     private var fullName: String { "\(store.state.personalInformation.lastName)/\(store.state.personalInformation.firstName)" }
 
+    var disposeBag = DisposeBag()
+
     private func generateQRCode(from string: String) -> Image? {
         let data = string.data(using: .ascii)
         guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
@@ -134,8 +136,20 @@ struct BoardingPassView: View {
                                 .bold()
                         }
                         .onAppear {
-                            self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: "M1EWING/SHAUN MR       1A11A1 BNESYDQF 551  107Y26J 37    00"))
-                            self.QRCode = self.generateQRCode(from: self.store.state.boardingPassToken ?? "") ?? Image(systemName: "qrcode")
+                            apiService
+                                .request(.getBoardingPassToken, with: BoardingPass.self)
+                                .sink(
+                                    receiveCompletion: { complete in
+                                        if case .failure(let error) = complete {
+                                            logger.error(error)
+                                        }
+                                }, receiveValue: { value in
+                                    logger.debug(value.token)
+                                    self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: value.token))
+                                    self.QRCode = self.generateQRCode(from: value.token) ?? Image(systemName: "qrcode")
+                                }
+                            )
+                                .add(to: self.disposeBag)
                         }
                     }
                 }

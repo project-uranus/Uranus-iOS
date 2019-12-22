@@ -10,11 +10,7 @@ import Foundation
 
 public extension String {
     internal func decode() -> BoardingPass {
-        return BoardingPass(
-            passengerName: String(self[2..<22]).trimmingCharacters(in: .whitespaces),
-            operatingCarrierDesignator: String(self[36..<39]).trimmingCharacters(in: .whitespaces),
-            flightNumber: String(self[39..<44]).trimmingCharacters(in: .whitespaces)
-        )
+        return BoardingPass(token: self)
     }
 }
 

@@ -8,12 +8,15 @@
 
 import Foundation
 
-struct BoardingPass {
-    let passengerName: String
-    let operatingCarrierDesignator: String
-    let flightNumber: String
-}
+struct BoardingPass: Codable {
+    let token: String
 
-extension BoardingPass {
+    var passengerName: String { String(self.token[2..<22]).trimmingCharacters(in: .whitespaces) }
+    var operatingCarrierDesignator: String { String(self.token[36..<39]).trimmingCharacters(in: .whitespaces) }
+    var flightNumber: String { String(self.token[39..<44]).trimmingCharacters(in: .whitespaces) }
     var flightDesignator: String { "\(self.operatingCarrierDesignator)\(self.flightNumber)" }
+
+    init(token: String) {
+        self.token = token
+    }
 }
