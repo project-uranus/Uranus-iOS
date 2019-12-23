@@ -15,8 +15,8 @@ func reducer(state: AppState, action: AppAction) -> AppState {
     case .readBoardingPass:
         guard let payload = action.payload as? String else { break }
         appState.boardingPassToken = payload
-    case .readPersonalInformation:
-        guard let payload = action.payload as? AppState.PersonalInformation else { break }
+    case .updatePersonalInformation:
+        guard let payload = action.payload as? PersonalInformation else { break }
         appState.personalInformation = payload
     case .hideBottomBar:
         guard let payload = action.payload as? Bool else { break }
@@ -29,6 +29,9 @@ func reducer(state: AppState, action: AppAction) -> AppState {
     case .updateActiveCounter:
         guard let payload = action.payload as? Int? else { break }
         appState.activeCounter = payload
+    case .appendMessage:
+        guard let payload = action.payload as? Notification.Message else { break }
+        appState.messages.append(payload)
     }
     return appState
 }

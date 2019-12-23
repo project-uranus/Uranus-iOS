@@ -7,13 +7,16 @@
 //
 
 import SwiftUI
+import PKHUD
 
 struct EditPersonalInformationView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject private var store: AppStore
 
-    @State var personalInformation: AppState.PersonalInformation
-
+    @State var personalInformation: PersonalInformation
     @State private var isPresented: Bool = false
+
+    var disposeBag = DisposeBag()
 
     var body: some View {
         NavigationView {
@@ -62,7 +65,27 @@ struct EditPersonalInformationView: View {
                 }
                 Section {
                     Button(action: {
-
+                        apiService
+                            .request(.updatePersonalInformation(information: self.personalInformation), with: Common.self)
+                            .sink(
+                                receiveCompletion: { complete in
+                                    if case .failure(let error) = complete {
+                                        logger.error(error)
+                                    }
+                            }, receiveValue: { _ in
+                                self.store.dispatch(
+                                    action: .init(
+                                        type: ActionType.updatePersonalInformation,
+                                        payload: self.personalInformation
+                                    )
+                                )
+                                DispatchQueue.main.async {
+                                    HUD.flash(.success, delay: 1.0)
+                                }
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                        )
+                            .add(to: self.disposeBag)
                     }, label: {
                         Text("提交")
                             .foregroundColor(.white)
@@ -88,6 +111,6 @@ struct EditPersonalInformationView: View {
 
 struct EditPersonalInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPersonalInformationView(personalInformation: AppState.PersonalInformation(legalName: "", firstName: "", lastName: "", email: "", IDNumber: ""))
+        EditPersonalInformationView(personalInformation: PersonalInformation(legalName: "", firstName: "", lastName: "", email: "", IDNumber: ""))
     }
 }

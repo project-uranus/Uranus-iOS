@@ -11,21 +11,21 @@ import EventKit
 import PKHUD
 
 protocol Event {
-    func addEvent(flight: Flight, alertTime: Date?)
+    func addEvent(flightDetail: FlightDetail, alertTime: Date?)
 }
 
 extension EKEventStore: Event {
 
-    func addEvent(flight: Flight, alertTime: Date?) {
+    func addEvent(flightDetail: FlightDetail, alertTime: Date?) {
         if let calendar = self.defaultCalendarForNewEvents {
             let event = EKEvent(eventStore: self)
             event.calendar = calendar
-            event.title = "\(flight.flightNumber) / \(flight.originAirport.positionCode) To \(flight.destinationAirport.positionCode)"
-            event.startDate = flight.departureTime
-            event.endDate = flight.arrivalTime
+            event.title = "\(flightDetail.flight.flightNumber) / \(flightDetail.flight.originAirport.IATA) To \(flightDetail.flight.destinationAirport.IATA)"
+            event.startDate = flightDetail.flight.departureTime
+            event.endDate = flightDetail.flight.arrivalTime
             event.notes =
             """
-                \(flight.flightNumber)
+            \(flightDetail.flight.flightNumber)
             """
 
             if alertTime != nil {

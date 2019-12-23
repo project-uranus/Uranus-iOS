@@ -18,7 +18,7 @@ struct PersonalInformationView: View {
     @State private var sourceType: UIImagePickerController.SourceType = .camera
     @State private var image: UIImage?
 
-    private var personalInformation: AppState.PersonalInformation { store.state.personalInformation }
+    private var personalInformation: PersonalInformation { store.state.personalInformation }
 
     var body: some View {
         List {
@@ -101,7 +101,7 @@ struct PersonalInformationView: View {
         )
             .modifier(HideBottomBarWhenPushed())
             .sheet(isPresented: $isSheetPresented) {
-                EditPersonalInformationView(personalInformation: self.store.state.personalInformation)
+                EditPersonalInformationView(personalInformation: self.store.state.personalInformation).environmentObject(self.store)
         }
     }
 }

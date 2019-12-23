@@ -58,6 +58,28 @@ struct ScheduleDetailView: View {
 
     @State private var isBoardingPassViewPresented: Bool = false
     @State private var isCheckInViewPresented: Bool = false
+    @State private var flightDetail: FlightDetail = .init(
+        flight: .init(
+            airline: "",
+            flightNumber: "",
+            aircraft: "",
+            dateOfFlight: "",
+            departureTime: Date(),
+            arrivalTime: Date(),
+            originAirport: Airport(IATA: "", name: "", position: "", latitude: 0, longitude: 0),
+            destinationAirport: Airport(IATA: "", name: "", position: "", latitude: 0, longitude: 0),
+            boardingTime: Date(),
+            boardingGate: "",
+            status: .noTakeoffInfo
+        ),
+        spec: .init(
+            compartmentCode: "",
+            seatNumber: "",
+            luggages: []
+        )
+    )
+
+    @State var flightID: Int64
 
     var disposeBag = DisposeBag()
 
@@ -68,18 +90,7 @@ struct ScheduleDetailView: View {
                 eventStore.requestAccess(to: .event) { granted, error in
                     if granted {
                         eventStore.addEvent(
-                            flight: Flight(
-                                id: 1576998137,
-                                airline: "中国东方航空",
-                                flightNumber: "MU291",
-                                aircraft: "Airbus A320",
-                                dateOfFlight: Date(),
-                                departureTime: .init(timeIntervalSince1970: 1576746900),
-                                arrivalTime: .init(timeIntervalSince1970: 1576759200),
-                                originAirport: Flight.City(position: "上海", positionCode: "SHA"),
-                                destinationAirport: Flight.City(position: "名古屋", positionCode: "NGO"),
-                                status: .scheduled
-                            ),
+                            flightDetail: self.flightDetail,
                             alertTime: nil
                         )
                     } else {
@@ -117,7 +128,7 @@ struct ScheduleDetailView: View {
                 .background(Color.theme.opacity(colorScheme == .dark ? 0.25 : 1))
                 .cornerRadius(8)
                 .sheet(isPresented: $isCheckInViewPresented) {
-                    CheckInView().environmentObject(self.store)
+                    CheckInView(flightID: self.flightID).environmentObject(self.store)
             }
             .disabled(store.state.activeCounter != nil)
         }
@@ -132,10 +143,10 @@ struct ScheduleDetailView: View {
                     HStack {
                         VStack(alignment: .trailing) {
                             Spacer()
-                            Text("17:15")
+                            Text(flightDetail.flight.departureTime.toString(with: .HHmm))
                                 .font(.caption)
                             Spacer()
-                            Text("20:40")
+                            Text(flightDetail.flight.arrivalTime.toString(with: .HHmm))
                                 .font(.caption)
                             Spacer()
                         }
@@ -143,13 +154,13 @@ struct ScheduleDetailView: View {
                             .frame(width: 6)
                         VStack(alignment: .leading) {
                             Spacer()
-                            Text("上海浦东国际机场 T1")
-                            Text("PVG T1")
+                            Text(flightDetail.flight.originAirport.name)
+                            Text(flightDetail.flight.originAirport.IATA)
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                             Spacer()
-                            Text("中部国际机场")
-                            Text("NGO")
+                            Text(flightDetail.flight.destinationAirport.name)
+                            Text(flightDetail.flight.destinationAirport.IATA)
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                             Spacer()
@@ -166,7 +177,7 @@ struct ScheduleDetailView: View {
                         Text("航空公司")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("中国东方航空")
+                        Text(flightDetail.flight.airline)
                             .font(.subheadline)
                             .bold()
                     }
@@ -180,7 +191,7 @@ struct ScheduleDetailView: View {
                         Text("状态")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        StatusChip(status: .scheduled)
+                        StatusChip(status: flightDetail.flight.status)
                     }
                     .padding()
                 }
@@ -192,7 +203,7 @@ struct ScheduleDetailView: View {
                         Text("日期")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("2019-12-19")
+                        Text(flightDetail.flight.dateOfFlight)
                             .font(.subheadline)
                             .bold()
                     }
@@ -206,7 +217,7 @@ struct ScheduleDetailView: View {
                         Text("登机时间")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("16:30")
+                        Text(flightDetail.flight.boardingTime.toString(with: .HHmm))
                             .font(.title)
                     }
                     .padding()
@@ -219,7 +230,7 @@ struct ScheduleDetailView: View {
                         Text("舱位")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("Y")
+                        Text(flightDetail.spec.compartmentCode)
                             .font(.title)
                     }
                     .padding()
@@ -232,7 +243,7 @@ struct ScheduleDetailView: View {
                         Text("座位号")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("13H")
+                        Text(flightDetail.spec.seatNumber)
                             .font(.title)
                     }
                     .padding()
@@ -245,7 +256,7 @@ struct ScheduleDetailView: View {
                         Text("登机口")
                             .font(.caption)
                             .foregroundColor(.gray)
-                        Text("2")
+                        Text(flightDetail.flight.boardingGate)
                             .font(.title)
                     }
                     .padding()
@@ -260,7 +271,21 @@ struct ScheduleDetailView: View {
                 .shadow(radius: 2)
 
         }
-        .navigationBarTitle("MU291")
+        .onAppear {
+            apiService
+                .request(.getFlightDetail(flightID: self.flightID), with: Response<FlightDetail>.self)
+                .sink(
+                    receiveCompletion: { complete in
+                        if case .failure(let error) = complete {
+                            logger.error(error)
+                        }
+                }, receiveValue: { value in
+                    self.flightDetail = value.value
+                }
+            )
+                .add(to: self.disposeBag)
+        }
+        .navigationBarTitle(self.flightDetail.flight.flightNumber)
         .navigationBarItems(trailing:
             Button(action: {
                 if self.store.state.settings.authenticateOnBoardingPassAppear {
@@ -275,7 +300,7 @@ struct ScheduleDetailView: View {
             })
                 .frame(width: 44, height: 44, alignment: .center)
                 .sheet(isPresented: $isBoardingPassViewPresented) {
-                    BoardingPassView().environmentObject(self.store)
+                    BoardingPassView(flightID: self.flightID).environmentObject(self.store)
             }
         )
     }
@@ -283,6 +308,6 @@ struct ScheduleDetailView: View {
 
 struct ScheduleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ScheduleDetailView()
+        ScheduleDetailView(flightID: 1576738590792)
     }
 }

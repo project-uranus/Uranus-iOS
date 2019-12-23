@@ -19,7 +19,7 @@ struct ScheduleItemView: View {
                     HStack {
                         StatusChip(status: flight.status)
                         Spacer()
-                        Text(flight.dateOfFlight.toString(with: .yyyyMMdd))
+                        Text(flight.dateOfFlight)
                             .font(.caption)
                     }
                     HStack {
@@ -53,7 +53,7 @@ struct ScheduleItemView: View {
                 }
                 .padding(16)
             }
-            NavigationLink(destination: ScheduleDetailView()) {
+            NavigationLink(destination: ScheduleDetailView(flightID: flight.id)) {
                 EmptyView()
             }
             .frame(width: 0)
@@ -70,7 +70,7 @@ struct ScheduleItemView_Previews: PreviewProvider {
                 airline: "中国东方航空",
                 flightNumber: "MU291",
                 aircraft: "Airbus A320",
-                dateOfFlight: Date(),
+                dateOfFlight: "2019-12-19",
                 departureTime: .init(timeIntervalSince1970: 1576746900),
                 arrivalTime: .init(timeIntervalSince1970: 1576759200),
                 originAirport: Flight.City(position: "上海", positionCode: "SHA"),

@@ -11,6 +11,7 @@ import UserNotifications
 import Starscream
 
 struct WebSocketView: UIViewControllerRepresentable {
+    @EnvironmentObject private var store: AppStore
 
     let url: URL
 
@@ -86,6 +87,7 @@ struct WebSocketView: UIViewControllerRepresentable {
                     logger.error(error.localizedDescription)
                 }
             }
+            parent.store.dispatch(action: AppAction(type: .appendMessage, payload: _notification.message))
         }
 
     }

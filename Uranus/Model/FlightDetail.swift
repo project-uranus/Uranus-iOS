@@ -19,11 +19,13 @@ extension FlightDetail {
         let airline: String
         let flightNumber: String
         let aircraft: String
-        let dateOfFlight: Date
+        let dateOfFlight: String
         let departureTime: Date
         let arrivalTime: Date
         let originAirport: Airport
         let destinationAirport: Airport
+        let boardingTime: Date
+        let boardingGate: String
         let status: FlightStatus
     }
 

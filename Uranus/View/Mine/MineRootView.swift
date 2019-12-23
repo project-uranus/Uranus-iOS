@@ -25,7 +25,7 @@ struct MineRootView: View {
                             .shadow(radius: 4)
                             .cornerRadius(8)
                         VStack(alignment: .leading) {
-                            Text(store.state.personalInformation.legalName)
+                            Text("\(store.state.personalInformation.legalName)")
                                 .font(.title)
                                 .bold()
                             Text("\(store.state.personalInformation.lastName)/\(store.state.personalInformation.firstName)")

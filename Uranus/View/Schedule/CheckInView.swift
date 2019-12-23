@@ -17,6 +17,7 @@ struct CheckInView: View {
     @State private var withAccompanyingPersons: Bool = false
     @State private var accompanyingPersons: [String] = [""]
 
+    @State var flightID: Int64
     var disposeBag = DisposeBag()
 
     var body: some View {
@@ -77,6 +78,7 @@ struct CheckInView: View {
                         apiService
                             .request(
                                 .checkin(
+                                    flightID: self.flightID,
                                     numberOfLuggages: self.withluggages ? self.luggages : 0,
                                     accompanyingPersons: self.withAccompanyingPersons ? self.accompanyingPersons : []
                                 ), with: Response.self
@@ -128,6 +130,6 @@ extension CheckInView {
 
 struct CheckInView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckInView()
+        CheckInView(flightID: 1576738590792)
     }
 }

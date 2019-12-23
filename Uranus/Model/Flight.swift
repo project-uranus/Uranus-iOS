@@ -14,7 +14,7 @@ struct Flight: Codable {
     let airline: String
     let flightNumber: String
     let aircraft: String
-    let dateOfFlight: Date
+    let dateOfFlight: String
     let departureTime: Date
     let arrivalTime: Date
     let originAirport: City

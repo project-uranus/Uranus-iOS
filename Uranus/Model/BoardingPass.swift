@@ -14,6 +14,7 @@ struct BoardingPass: Codable {
     var operatingCarrierDesignator: String = ""
     var flightNumber: String = ""
     var flightDesignator: String = ""
+    var passengerID: String = ""
 
     enum CodingKeys: String, CodingKey {
         case token
@@ -25,5 +26,9 @@ struct BoardingPass: Codable {
         self.operatingCarrierDesignator = String(token[36..<39]).trimmingCharacters(in: .whitespaces)
         self.flightNumber = String(token[39..<44]).trimmingCharacters(in: .whitespaces)
         self.flightDesignator = "\(self.operatingCarrierDesignator)\(self.flightNumber)"
+
+        if let firstIndex = token.firstIndex(of: ">") {
+            self.passengerID = String(token[token.index(after: firstIndex)..<token.endIndex])
+        }
     }
 }

@@ -15,6 +15,8 @@ struct BoardingPassView: View {
     @State private var QRCode: Image = Image(systemName: "qrcode")
     private var fullName: String { "\(store.state.personalInformation.lastName)/\(store.state.personalInformation.firstName)" }
 
+    @State var flightID: Int64
+
     var disposeBag = DisposeBag()
 
     private func generateQRCode(from string: String) -> Image? {
@@ -42,116 +44,35 @@ struct BoardingPassView: View {
         NavigationView {
             ZStack {
                 Color.theme.opacity(0.1).edgesIgnoringSafeArea(.all)
-                VStack {
-                    ZStack {
-                        Panel()
-                        HStack {
-                            Text("中国东方航空 · MU291")
-                        }
+                ZStack {
+                    Panel()
+                        .frame(width: 200, height: 230)
+                    VStack {
+                        QRCode
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 170, height: 170)
+                            .background(Color.clear)
+                        Text(fullName)
+                            .bold()
                     }
-                    .frame(height: 80)
-                    .padding(.init(top: 0, leading: 10, bottom: 4, trailing: 10))
-                    ZStack {
-                        Panel()
-                        VStack {
-                            HStack {
-                                Spacer()
-                                VStack {
-                                    Text("上海")
-                                        .bold()
-                                    Text("SHA")
-                                        .foregroundColor(.gray)
-                                    Text("17:15")
-                                        .font(.caption)
-                                }
-                                Spacer()
-                                Image(systemName: "airplane")
-                                Spacer()
-                                VStack {
-                                    Text("名古屋")
-                                        .bold()
-                                    Text("NGO")
-                                        .foregroundColor(.gray)
-                                    Text("20:40")
-                                        .font(.caption)
-                                }
-                                Spacer()
+                    .onAppear {
+                        apiService
+                            .request(.getBoardingPassToken(flightID: self.flightID), with: BoardingPass.self)
+                            .sink(
+                                receiveCompletion: { complete in
+                                    if case .failure(let error) = complete {
+                                        logger.error(error)
+                                    }
+                            }, receiveValue: { value in
+                                self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: value.token))
+                                self.QRCode = self.generateQRCode(from: value.token) ?? Image(systemName: "qrcode")
                             }
-                        }
-                        .padding(8)
-                    }
-                    .frame(height: 80)
-                    .padding(.init(top: 0, leading: 10, bottom: 4, trailing: 10))
-                    HStack {
-                        ZStack {
-                            Panel()
-                            VStack {
-                                Text("舱位")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                Text("Y")
-                                    .font(.title)
-                            }
-                            .padding()
-                        }
-                        Spacer()
-                            .frame(width: 10)
-                        ZStack {
-                            Panel()
-                            VStack {
-                                Text("座位号")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                Text("13H")
-                                    .font(.title)
-                            }
-                            .padding()
-                        }
-                        Spacer()
-                            .frame(width: 10)
-                        ZStack {
-                            Panel()
-                            VStack {
-                                Text("登机口")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                                Text("2")
-                                    .font(.title)
-                            }
-                            .padding()
-                        }
-                    }
-                    .frame(height: 80)
-                    .padding(.init(top: 0, leading: 10, bottom: 4, trailing: 10))
-                    ZStack {
-                        Panel()
-                            .frame(width: 200, height: 230)
-                        VStack {
-                            QRCode
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 170, height: 170)
-                                .background(Color.clear)
-                            Text(fullName)
-                                .bold()
-                        }
-                        .onAppear {
-                            apiService
-                                .request(.getBoardingPassToken, with: BoardingPass.self)
-                                .sink(
-                                    receiveCompletion: { complete in
-                                        if case .failure(let error) = complete {
-                                            logger.error(error)
-                                        }
-                                }, receiveValue: { value in
-                                    self.store.dispatch(action: .init(type: ActionType.readBoardingPass, payload: value.token))
-                                    self.QRCode = self.generateQRCode(from: value.token) ?? Image(systemName: "qrcode")
-                                }
-                            )
-                                .add(to: self.disposeBag)
-                        }
+                        )
+                            .add(to: self.disposeBag)
                     }
                 }
+
                 .navigationBarTitle("登机牌")
                 .navigationBarItems(leading:
                     Button(action: {
@@ -167,6 +88,6 @@ struct BoardingPassView: View {
 
 struct BoardingPassView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardingPassView().environmentObject(AppStore())
+        BoardingPassView(flightID: 1576738590792).environmentObject(AppStore())
     }
 }
