@@ -59,6 +59,8 @@ struct ScheduleDetailView: View {
     @State private var isBoardingPassViewPresented: Bool = false
     @State private var isCheckInViewPresented: Bool = false
 
+    var disposeBag = DisposeBag()
+
     var buttonGroup: some View {
         HStack {
             Button(action: {
@@ -67,14 +69,15 @@ struct ScheduleDetailView: View {
                     if granted {
                         eventStore.addEvent(
                             flight: Flight(
+                                id: 1576998137,
                                 airline: "中国东方航空",
                                 flightNumber: "MU291",
                                 aircraft: "Airbus A320",
                                 dateOfFlight: Date(),
                                 departureTime: .init(timeIntervalSince1970: 1576746900),
                                 arrivalTime: .init(timeIntervalSince1970: 1576759200),
-                                originAirport: City(position: "上海", positionCode: "SHA"),
-                                destinationAirport: City(position: "名古屋", positionCode: "NGO"),
+                                originAirport: Flight.City(position: "上海", positionCode: "SHA"),
+                                destinationAirport: Flight.City(position: "名古屋", positionCode: "NGO"),
                                 status: .scheduled
                             ),
                             alertTime: nil
@@ -104,7 +107,7 @@ struct ScheduleDetailView: View {
             }, label: {
                 HStack {
                     Image(systemName: "person.crop.circle.badge.checkmark")
-                    Text("值机")
+                    Text(store.state.activeCounter == nil ? "值机" : "值机柜台 \(store.state.activeCounter!)")
                 }
                 .foregroundColor(.white)
                 .frame(minWidth: 0, maxWidth: .infinity)
@@ -114,8 +117,9 @@ struct ScheduleDetailView: View {
                 .background(Color.theme.opacity(colorScheme == .dark ? 0.25 : 1))
                 .cornerRadius(8)
                 .sheet(isPresented: $isCheckInViewPresented) {
-                    CheckInView()
+                    CheckInView().environmentObject(self.store)
             }
+            .disabled(store.state.activeCounter != nil)
         }
     }
 

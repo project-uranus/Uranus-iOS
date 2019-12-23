@@ -10,11 +10,14 @@ import SwiftUI
 
 struct CheckInView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject private var store: AppStore
 
     @State private var withluggages: Bool = false
     @State private var luggages: Int = 0
     @State private var withAccompanyingPersons: Bool = false
     @State private var accompanyingPersons: [String] = [""]
+
+    var disposeBag = DisposeBag()
 
     var body: some View {
         NavigationView {
@@ -49,14 +52,14 @@ struct CheckInView: View {
                                     .multilineTextAlignment(.trailing)
                                     .keyboardType(.numbersAndPunctuation)
                                 // FIXME: Index out of range when deletion
-//                                if index != 0 {
-//                                    Button(action: {
-//                                        self.accompanyingPersons.remove(at: index)
-//                                    }, label: {
-//                                        Image(systemName: "minus.circle")
-//                                    })
-//                                    .buttonStyle(BorderlessButtonStyle())
-//                                }
+                                //                                if index != 0 {
+                                //                                    Button(action: {
+                                //                                        self.accompanyingPersons.remove(at: index)
+                                //                                    }, label: {
+                                //                                        Image(systemName: "minus.circle")
+                                //                                    })
+                                //                                    .buttonStyle(BorderlessButtonStyle())
+                                //                                }
                                 if index == self.accompanyingPersons.count - 1 {
                                     Button(action: {
                                         self.accompanyingPersons.append("")
@@ -71,7 +74,24 @@ struct CheckInView: View {
                 }
                 Section {
                     Button(action: {
-
+                        apiService
+                            .request(
+                                .checkin(
+                                    numberOfLuggages: self.withluggages ? self.luggages : 0,
+                                    accompanyingPersons: self.withAccompanyingPersons ? self.accompanyingPersons : []
+                                ), with: Response.self
+                        )
+                            .sink(
+                                receiveCompletion: { complete in
+                                    if case .failure(let error) = complete {
+                                        logger.error(error)
+                                    }
+                            }, receiveValue: { value in
+                                self.store.dispatch(action: AppAction(type: .updateActiveCounter, payload: value.counterID))
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                        )
+                            .add(to: self.disposeBag)
                     }, label: {
                         Text("提交")
                             .foregroundColor(.white)
@@ -92,6 +112,16 @@ struct CheckInView: View {
                     Text("返回")
                 })
             )
+        }
+    }
+}
+
+extension CheckInView {
+    struct Response: Codable {
+        let counterID: Int
+
+        enum CodingKeys: String, CodingKey {
+            case counterID = "counterId"
         }
     }
 }

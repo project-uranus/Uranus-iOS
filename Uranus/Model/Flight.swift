@@ -9,7 +9,8 @@
 import Foundation
 
 struct Flight: Codable {
-    let uuid: UUID = .init()
+    // swiftlint:disable identifier_name
+    let id: Int64
     let airline: String
     let flightNumber: String
     let aircraft: String
@@ -21,8 +22,9 @@ struct Flight: Codable {
     let status: FlightStatus
 }
 
-struct FlightDetail: Codable {
-//    struct Flight: Codable {
-//        <#fields#>
-//    }
+extension Flight {
+    struct City: Codable {
+        let position: String
+        let positionCode: String
+    }
 }

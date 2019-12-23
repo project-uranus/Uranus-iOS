@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MessageItemView: View {
-    @State var message: Message
+    @State var message: Notification.Message
 
     var body: some View {
         HStack(alignment: .top) {
@@ -45,6 +45,6 @@ struct MessageItemView: View {
 
 struct MessageItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageItemView(message: Message(time: .init(timeIntervalSince1970: 1576746900), title: "TEST", body: "TEST"))
+        MessageItemView(message: Notification.Message(title: "TEST", body: "TEST"))
     }
 }

@@ -34,7 +34,7 @@ struct ScheduleRootView: View {
                 }
                 .aspectRatio(16/9, contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
-                ForEach(flightList, id: \.self.uuid) { flight in
+                ForEach(flightList, id: \.self.id) { flight in
                     ScheduleItemView(flight: flight)
                 }
             }

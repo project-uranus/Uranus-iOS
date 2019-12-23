@@ -24,4 +24,5 @@ enum ActionType {
     case readPersonalInformation
     case toggleAuthenticateOnBoardingPassAppear
     case logout
+    case updateActiveCounter
 }

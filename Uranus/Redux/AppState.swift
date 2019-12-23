@@ -14,8 +14,10 @@ struct AppState {
     var personalInformation = PersonalInformation(legalName: "", firstName: "", lastName: "", email: "", IDNumber: "")
     var appearance: Appearance = Appearance()
     var settings: Settings = Settings()
-    var messages: [Message] = [Message(time: .init(timeIntervalSince1970: 1576746900), title: "TEST", body: "TEST")]
+    var messages: [Notification.Message] = [Notification.Message(title: "TEST", body: "TEST")]
     var token: String = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cmFudXMiLCJleHAiOjE1NzcxMTk2MzcsImlhdCI6MTU3NzAzMzIzNywicm9sZSI6InBhc3NlbmdlciIsImlkZW50aWZpZXIiOjE1NzY4OTYzODI1NjF9.OFjoYjnVNzUnxop8RpEilOXV3Zpd0ncm7mTLi4of5sY"
+    var activeCounter: Int?
+//    var activeFlight: FlightDetail
 }
 
 extension AppState {

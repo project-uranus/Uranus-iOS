@@ -26,6 +26,9 @@ func reducer(state: AppState, action: AppAction) -> AppState {
         appState.settings.authenticateOnBoardingPassAppear = payload
     case .logout:
         appState = .init()
+    case .updateActiveCounter:
+        guard let payload = action.payload as? Int? else { break }
+        appState.activeCounter = payload
     }
     return appState
 }

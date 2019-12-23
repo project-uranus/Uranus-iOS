@@ -66,14 +66,15 @@ struct ScheduleItemView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             ScheduleItemView(flight: Flight(
+                id: 1576998137,
                 airline: "中国东方航空",
                 flightNumber: "MU291",
                 aircraft: "Airbus A320",
                 dateOfFlight: Date(),
                 departureTime: .init(timeIntervalSince1970: 1576746900),
                 arrivalTime: .init(timeIntervalSince1970: 1576759200),
-                originAirport: City(position: "上海", positionCode: "SHA"),
-                destinationAirport: City(position: "名古屋", positionCode: "NGO"),
+                originAirport: Flight.City(position: "上海", positionCode: "SHA"),
+                destinationAirport: Flight.City(position: "名古屋", positionCode: "NGO"),
                 status: .scheduled
             ))
         }

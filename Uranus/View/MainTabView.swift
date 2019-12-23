@@ -55,7 +55,7 @@ struct MainTabView: View {
                     )
                 )
             }
-            WebSocketView(url: URL(string: "wss://echo.websocket.org")!)
+            WebSocketView(url: URL(string: "ws://202.120.40.8:30379/notification/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cmFudXMiLCJleHAiOjE1NzcxMTk2MzcsImlhdCI6MTU3NzAzMzIzNywicm9sZSI6InBhc3NlbmdlciIsImlkZW50aWZpZXIiOjE1NzY4OTYzODI1NjF9.OFjoYjnVNzUnxop8RpEilOXV3Zpd0ncm7mTLi4of5sY")!)
                 .frame(width: 0, height: 0)
         }
     }

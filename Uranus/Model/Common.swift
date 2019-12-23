@@ -1,5 +1,5 @@
 //
-//  City.swift
+//  Common.swift
 //  Uranus
 //
 //  Created by Yuchen Cheng on 2019/12/23.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct City: Codable {
-    let position: String
-    let positionCode: String
+struct Common: Codable {
+    let message: String
 }

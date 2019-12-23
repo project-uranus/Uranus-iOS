@@ -70,8 +70,11 @@ struct WebSocketView: UIViewControllerRepresentable {
             notificationCenter.delegate = self
             let content = UNMutableNotificationContent()
 
-            content.title = notification
-            content.body = notification
+            logger.debug(notification)
+            // swiftlint:disable identifier_name
+            guard let _notification: Notification = try? JSONDecoder().decode(Notification.self, from: notification.data(using: .utf8)!) else { return }
+            content.title = _notification.message.title
+            content.body = _notification.message.body
             content.sound = UNNotificationSound.default
             content.badge = 1
 

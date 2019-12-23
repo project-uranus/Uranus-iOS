@@ -10,10 +10,14 @@ import Foundation
 
 struct BoardingPass: Codable {
     let token: String
-    let passengerName: String
-    let operatingCarrierDesignator: String
-    let flightNumber: String
-    let flightDesignator: String
+    var passengerName: String = ""
+    var operatingCarrierDesignator: String = ""
+    var flightNumber: String = ""
+    var flightDesignator: String = ""
+
+    enum CodingKeys: String, CodingKey {
+        case token
+    }
 
     init(token: String) {
         self.token = token

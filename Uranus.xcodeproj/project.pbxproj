@@ -36,7 +36,7 @@
 		9A22BEB723AE12F8005A8925 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEB623AE12F8005A8925 /* PageView.swift */; };
 		9A22BEBA23AE6499005A8925 /* MessageRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEB923AE6498005A8925 /* MessageRootView.swift */; };
 		9A22BEBC23AE68D2005A8925 /* MessageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBB23AE68D2005A8925 /* MessageItemView.swift */; };
-		9A22BEBE23AE6F09005A8925 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBD23AE6F09005A8925 /* Message.swift */; };
+		9A22BEBE23AE6F09005A8925 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBD23AE6F09005A8925 /* Notification.swift */; };
 		9A22BEC023AE720E005A8925 /* Date+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEBF23AE720E005A8925 /* Date+toString.swift */; };
 		9A22BEC223AE84A0005A8925 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22BEC123AE84A0005A8925 /* ApiService.swift */; };
 		9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A347ED523967F8C003FEA7A /* StatusChip.swift */; };
@@ -49,8 +49,10 @@
 		9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A221F2394A14F00D06B60 /* Color+Hex.swift */; };
 		9A7A2222239533C700D06B60 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A2221239533C700D06B60 /* AboutView.swift */; };
 		9A9EDF2223AF51DB001DC7DA /* AnyCancellable+DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2123AF51DB001DC7DA /* AnyCancellable+DisposeBag.swift */; };
-		9A9EDF2423AFD13F001DC7DA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2323AFD13F001DC7DA /* City.swift */; };
 		9A9EDF2623AFDAF6001DC7DA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2523AFDAF6001DC7DA /* Response.swift */; };
+		9A9EDF2823AFEBAA001DC7DA /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2723AFEBAA001DC7DA /* ErrorHandler.swift */; };
+		9A9EDF2A23AFECD6001DC7DA /* FlightDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2923AFECD6001DC7DA /* FlightDetail.swift */; };
+		9A9EDF2C23B07EC6001DC7DA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9EDF2B23B07EC6001DC7DA /* Common.swift */; };
 		9AA96311239019C3000539A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96310239019C3000539A4 /* AppDelegate.swift */; };
 		9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96312239019C3000539A4 /* SceneDelegate.swift */; };
 		9AA96315239019C3000539A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA96314239019C3000539A4 /* ContentView.swift */; };
@@ -114,7 +116,7 @@
 		9A22BEB623AE12F8005A8925 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		9A22BEB923AE6498005A8925 /* MessageRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRootView.swift; sourceTree = "<group>"; };
 		9A22BEBB23AE68D2005A8925 /* MessageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItemView.swift; sourceTree = "<group>"; };
-		9A22BEBD23AE6F09005A8925 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9A22BEBD23AE6F09005A8925 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9A22BEBF23AE720E005A8925 /* Date+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+toString.swift"; sourceTree = "<group>"; };
 		9A22BEC123AE84A0005A8925 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		9A347ED523967F8C003FEA7A /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
@@ -127,8 +129,10 @@
 		9A7A221F2394A14F00D06B60 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		9A7A2221239533C700D06B60 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		9A9EDF2123AF51DB001DC7DA /* AnyCancellable+DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyCancellable+DisposeBag.swift"; sourceTree = "<group>"; };
-		9A9EDF2323AFD13F001DC7DA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		9A9EDF2523AFDAF6001DC7DA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		9A9EDF2723AFEBAA001DC7DA /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		9A9EDF2923AFECD6001DC7DA /* FlightDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetail.swift; sourceTree = "<group>"; };
+		9A9EDF2B23B07EC6001DC7DA /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		9AA9630D239019C3000539A4 /* Uranus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uranus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA96310239019C3000539A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AA96312239019C3000539A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,9 +299,10 @@
 				9A0BA9502398BECF00172F43 /* Airport.swift */,
 				9A22BE9E23AD3929005A8925 /* BoardingPass.swift */,
 				9A22BEA623AD4CF3005A8925 /* Flight.swift */,
-				9A22BEBD23AE6F09005A8925 /* Message.swift */,
-				9A9EDF2323AFD13F001DC7DA /* City.swift */,
+				9A22BEBD23AE6F09005A8925 /* Notification.swift */,
 				9A9EDF2523AFDAF6001DC7DA /* Response.swift */,
+				9A9EDF2923AFECD6001DC7DA /* FlightDetail.swift */,
+				9A9EDF2B23B07EC6001DC7DA /* Common.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				9AA96312239019C3000539A4 /* SceneDelegate.swift */,
 				9AA96314239019C3000539A4 /* ContentView.swift */,
 				9A22BEC123AE84A0005A8925 /* ApiService.swift */,
+				9A9EDF2723AFEBAA001DC7DA /* ErrorHandler.swift */,
 				9AA96316239019C5000539A4 /* Assets.xcassets */,
 				9AA9631B239019C5000539A4 /* LaunchScreen.storyboard */,
 				9AA9631E239019C5000539A4 /* Info.plist */,
@@ -670,7 +676,6 @@
 				9A098E6A23A89E0900E9DE72 /* AppAction.swift in Sources */,
 				9A098E6C23A89E1C00E9DE72 /* AppReducer.swift in Sources */,
 				9A7A2222239533C700D06B60 /* AboutView.swift in Sources */,
-				9A9EDF2423AFD13F001DC7DA /* City.swift in Sources */,
 				9A22BEA923ADD62C005A8925 /* WebSocketView.swift in Sources */,
 				9A9EDF2623AFDAF6001DC7DA /* Response.swift in Sources */,
 				9AC2E7FC23A3631500E8F61E /* PersonalInformationView.swift in Sources */,
@@ -680,6 +685,7 @@
 				9A22BEAB23ADF7E3005A8925 /* CheckInView.swift in Sources */,
 				9A347EDB2396BA1A003FEA7A /* SearchTextFieldStyle.swift in Sources */,
 				9A347EDD239771BA003FEA7A /* ScheduleDetailView.swift in Sources */,
+				9A9EDF2C23B07EC6001DC7DA /* Common.swift in Sources */,
 				9A22BEB723AE12F8005A8925 /* PageView.swift in Sources */,
 				9A22BEA723AD4CF3005A8925 /* Flight.swift in Sources */,
 				9A347ED623967F8C003FEA7A /* StatusChip.swift in Sources */,
@@ -687,6 +693,7 @@
 				9ACBEC3F23977D6F0079C537 /* MapView.swift in Sources */,
 				9A22BEA323AD4AF0005A8925 /* SafariView.swift in Sources */,
 				9AC2E7FA239F7DE700E8F61E /* BoardingPassView.swift in Sources */,
+				9A9EDF2823AFEBAA001DC7DA /* ErrorHandler.swift in Sources */,
 				9A22BEC023AE720E005A8925 /* Date+toString.swift in Sources */,
 				9A22BEA523AD4C99005A8925 /* EKEventStore+Event.swift in Sources */,
 				9A7A22202394A14F00D06B60 /* Color+Hex.swift in Sources */,
@@ -697,8 +704,9 @@
 				9A22BE9723AB5F1D005A8925 /* EditPersonalInformationView.swift in Sources */,
 				9A7A221B23940B1E00D06B60 /* ScheduleRootView.swift in Sources */,
 				9AA96313239019C3000539A4 /* SceneDelegate.swift in Sources */,
+				9A9EDF2A23AFECD6001DC7DA /* FlightDetail.swift in Sources */,
 				9A347ED823969FA4003FEA7A /* ScheduleItemView.swift in Sources */,
-				9A22BEBE23AE6F09005A8925 /* Message.swift in Sources */,
+				9A22BEBE23AE6F09005A8925 /* Notification.swift in Sources */,
 				9A0BA94B23979A7C00172F43 /* TimeLine.swift in Sources */,
 				9A22BEA123AD4632005A8925 /* WebView.swift in Sources */,
 				9A22BEBA23AE6499005A8925 /* MessageRootView.swift in Sources */,

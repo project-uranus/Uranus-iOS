@@ -8,17 +8,21 @@
 
 import Foundation
 import Combine
+import PKHUD
 
 protocol TargetType {
     var baseURL: URL { get }
     var path: String { get }
     var method: HTTPMethod { get }
+    var task: Task { get }
     var headers: [String: String]? { get }
 }
 
 enum Request {
     case getBoardingPassToken
     case getFlightList
+    case getFlightDetail(flightNumber: String)
+    case checkin(numberOfLuggages: Int, accompanyingPersons: [String])
 }
 
 enum HTTPMethod: String {
@@ -26,6 +30,11 @@ enum HTTPMethod: String {
     case POST
     case PUT
     case DELETE
+}
+
+enum Task {
+    case requestPlain
+    case requestData(data: Data?)
 }
 
 extension Request: TargetType {
@@ -39,13 +48,40 @@ extension Request: TargetType {
             return "/boardingPass"
         case .getFlightList:
             return "/flights"
+        case .getFlightDetail(let flightNumber):
+            return "/flights/\(flightNumber)"
+        case .checkin:
+            return "/checkin"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .getBoardingPassToken, .getFlightList:
+        case .getBoardingPassToken, .getFlightList, .getFlightDetail:
             return .GET
+        case .checkin:
+            return .POST
+        }
+    }
+
+    var task: Task {
+        switch self {
+        case .checkin(let numberOfLuggages, let accompanyingPersons):
+            let jsonObject: [String: Any] = [
+                "number_of_luggages": numberOfLuggages,
+                "accompanying_persons": accompanyingPersons
+            ]
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [])
+                return .requestData(data: jsonData)
+            } catch {
+                DispatchQueue.main.async {
+                    HUD.flash(.labeledError(title: "错误", subtitle: "parameters parsed error"), delay: 1.0)
+                }
+                return .requestPlain
+            }
+        default:
+            return .requestPlain
         }
     }
 
@@ -89,6 +125,13 @@ final class ApiService<Target: TargetType>: ApiServiceType {
             target.headers?.forEach { header in
                 request.addValue(header.1, forHTTPHeaderField: header.0)
             }
+        }
+
+        switch target.task {
+        case .requestData(let data):
+            request.httpBody = data
+        default:
+            break
         }
 
         return URLSession.shared
