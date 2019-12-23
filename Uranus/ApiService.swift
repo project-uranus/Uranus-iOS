@@ -171,7 +171,6 @@ final class ApiService<Target: TargetType>: ApiServiceType {
 
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = target.method.rawValue
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cmFudXMiLCJleHAiOjE1Nzk3MTE5MjIsImlhdCI6MTU3NzExOTkyMiwicm9sZSI6InBhc3NlbmdlciIsImlkZW50aWZpZXIiOjE1NzY4OTYzODI1NjF9.lcq00eAI-K17hx-rtyh-9DZac7CefJaszj0Tmw68hPk", forHTTPHeaderField: "Authorization")
         if target.headers != nil {
             target.headers?.forEach { header in

@@ -69,14 +69,14 @@ struct ScheduleRootView: View {
                                         RoundedRectangle(cornerRadius: 8)
                                             .fill(Color.black)
                                             .opacity(0.8)
-                                        Text(self.token?.decode().passengerID ?? "")
+                                        Text(self.token?.decode().passengerName ?? "")
                                             .font(.title)
                                             .padding()
                                     }
                                     .frame(width: 200, height: 100)
                                     Button(action: {
                                         apiService
-                                            .request(.updatePassengerStatus(passengerID: self.token?.decode().passengerName ?? "", status: 8), with: BoardingPass.self)
+                                            .request(.updatePassengerStatus(passengerID: self.token?.decode().passengerID ?? "", status: 8), with: BoardingPass.self)
                                             .sink(
                                                 receiveCompletion: { complete in
                                                     if case .failure(let error) = complete {
